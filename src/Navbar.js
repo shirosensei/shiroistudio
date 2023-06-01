@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Logo, Header, NavbarContainer, NavItem, ToggleButton  } from './Navbar.jsx'
+import { Logo, Header, NavbarContainer, NavItem, ToggleButton, Line  } from './Navbar.jsx'
 const Navbar = () => {
   
   const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +16,7 @@ const Navbar = () => {
         </Logo>
 
         <ToggleButton onClick={toggleMenu}>
-          
-          
+        <Line isOpen={isOpen} />
          </ToggleButton>
         <NavbarContainer isOpen={isOpen ? 'open' : ''}>
       <NavItem href="#">Home</NavItem>

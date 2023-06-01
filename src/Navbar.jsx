@@ -7,7 +7,7 @@ justify-content: space-between;
 flex-direction: row;
 background-color: #ffff;
 border-bottom: 1px solid #e5e5e5;
-padding: 12px;
+
 `;
 
 export const Logo = styled.h1`
@@ -22,55 +22,80 @@ display: flex;
 flex-direction: row;
 align-items: center;
 gap: 2rem;
+transition: height 0.3s ease-in-out;
 
 
-&.open {
-    transition: height 0.3s ease-in-out;
-  }
 
 
   /* Mobile styles */
   @media screen and (max-width: 767px) {
     /* Mobile menu styles */
     display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-    position: absolute;
+    position: relative;
     background-color: #333333;
-    top: 95px;
-    left: 595px;
+    // top: 95px;
+    // left: 595px;
     padding: 2rem;
-    width: 100px;
+    // width: 100px;
     height: 150px;
     overflow: hidden;
-  transition: height 0.3s ease-in-out;
-  }
+    transition: height 0.3s ease-in-out;
+ }
 
+ &.open {
+    height: 200px;
+  }
 
 `;
 
 export const ToggleButton = styled.button`
   /* Toggle button styles */
 
-  width: 50px;
-  height: 50px;
-  background-color: #ffff;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 5px;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  transition: transform 0.3s ease-in-out;
-
-
+    position: relative;
+    width: 60px;
+    height: 50px;
+    background: tomato;
+    border: 1px solid #000;
+    cursor: pointer;
   /* Mobile styles */
   @media (min-width: 768px) {
     display: none; /* Hide toggle button on desktop screens */
   }
 `;
 
+export const Line = styled.span`
+/* Line styles */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: none;
+transition: transform 0.3s ease-in-out;
+
+&::before,
+&::after {
+  content: '';
+  height: 2px;
+  width: 50px;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+&::before {
+    position: absolute;
+    width: 45px;
+    transform: translateY(-8px) rotate(${props => (props.isOpen ? '40deg' : '0')});
+  }
+
+  &::after {
+    position: absolute;
+    top: 13px;
+    width: 45px;
+    transform: translateY(8px) rotate(${props => (props.isOpen ? '-55deg' : '0')});
+  }
+
+  
+`
 
 export const NavItem = styled.a`
 display: flex;

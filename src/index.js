@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { DarkBackground, LightBackground } from './DarkBackground';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AboutMe from './About';
+import ContactMe from './ContactMe';
+import Project from './Project';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DarkBackground />
-    <App />
+        <BrowserRouter>
+    <Routes>
+    <Route path="/"  element={<App />} />
+      <Route path="/about"  element={<AboutMe />} />
+      <Route path="/contact"  element={<ContactMe />} />
+      <Route path="/project"  element={<Project />} />
+    </Routes>
+    </BrowserRouter>
+    
   </React.StrictMode>
 );
 

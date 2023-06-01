@@ -49,11 +49,6 @@ export const DarkBackground = createGlobalStyle`
     padding: 0;
   }
 
-html: {
-  font-size: 62.5%;
-  width: 100vh;
-}
-
 }
 `;
 
