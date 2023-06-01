@@ -40,6 +40,7 @@ const NavMenu = styled.ul`
 const NavItem = styled.li`
   margin-left: 10px;
 
+
   a {
     text-decoration: none;
     color: #fff;

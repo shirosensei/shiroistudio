@@ -13,7 +13,7 @@ const FooterContainer = styled.footer`
   position: relative;
 
   @media screen and (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: flex-end;
     
@@ -31,12 +31,15 @@ text-decoration: none;
 color: #fff;
 font-size: 1.5rem;
 padding: .5rem;
-
 `
 
 const FooterIcon = styled.div`
 background-color: inherit;
 margin: 0;
+
+@media screen and (max-width: 768px) {
+  margin-bottom: 1.2rem;
+}
 `
 
 

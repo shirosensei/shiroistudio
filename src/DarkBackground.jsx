@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 // Create a global style component
 export const DarkBackground = createGlobalStyle`
@@ -66,3 +66,27 @@ export const LightBackground = createGlobalStyle`
     }
     
     `;
+
+    const theme = {
+      colors: {
+        primary: '#ff0000',
+        secondary: '#ff9900',
+        tertiary: '#800080',
+        quaternary: '#a6c8e0',
+        quinary: '#a2d9ce',
+        senary: '#333333',
+        dark: '#000',
+        light: '#fff',
+        gray: '#f0f0f0',
+        pastel: '#a6c8e0',
+        lightGreen: '#a2d9ce',
+        black: '#000000',
+        navy: '#000080',
+        darkGray: '#333333',
+        },
+    }
+    
+
+    export const QuaternaryTheme = styled.div`
+background: ${props => props.theme.colors.quaternary};
+`

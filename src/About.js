@@ -28,7 +28,13 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-height: 85vh;
+height: 90vh;
+word-break: normal;
+padding: 0 1.5rem;
+
+@media screen and (max-width: 598px) {
+  margin-top: 5.5rem;
+}
 
 `;
 //   padding: 40px;
@@ -51,6 +57,7 @@ const AboutDescription = styled.p`
   line-height: 2rem;
   text-align: center;
   width: fit-content(10em);
+  break-word: break-word;
 `;
 
 const SkillsContainer = styled.div`
@@ -58,8 +65,14 @@ const SkillsContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 10px;
-  margin-bottom: 15px;
+  width: 100%;
+
+ 
+
+  @media (max-width: 598px) {
+    
+    margin-bottom: 4.5rem;
+  }
 
 `;
 

@@ -18,6 +18,12 @@ const HomeTitle = styled.h1`
   font-size: 32px;
   color: #333;
   margin-bottom: 16px;
+  @media (max-width: 768px) {
+    .break-word {
+      word-break: break-word;
+    }
+  }
+  
 `;
 
 const HomeSubtitle = styled.h2`
