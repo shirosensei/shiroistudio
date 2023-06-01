@@ -1,32 +1,66 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, ThemeProvider  } from 'styled-components';
 import { SiHtml5, SiCss3, SiJavascript, SiMongodb, SiPostman, SiNodeDotJs, SiNextDotJs, SiBootstrap, SiTailwindcss, SiGit, SiSass, SiPhp, SiReact } from 'react-icons/si';
 import { DarkBackground, LightBackground } from './DarkBackground';
 import Footer from './Footer';
 import ResponsiveNavbar from './ResponsiveNavbar';
 
+const theme = {
+  background: {
+    light: '#f5f5f5',
+    dark: '#1a1a1a',
+    deep: '#607d8b'
+  },
+};
+
+const LightTheme = styled.div`
+background: ${props => props.theme.background.light};
+`
+const DarkTheme = styled.div`
+background: ${props => props.theme.background.dark};
+`
+const DeepTheme = styled.div`
+background: ${props => props.theme.background.deep};
+`
+
 const AboutContainer = styled.div`
-  padding: 40px;
-  background-color: #607d8b;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 85vh;
+
 `;
+//   padding: 40px;
+//   background-color: #607d8b;
+// `;
+// background: ${props => props.theme.background.light};
+// color: ${props => props.theme.text};
 
 const AboutTitle = styled.h2`
   font-size: 24px;
   color: #333;
   margin-bottom: 16px;
+  text-align: center;
 `;
 
 const AboutDescription = styled.p`
   font-size: 18px;
   color: #fff;
   margin-bottom: 24px;
-  line-height: 25px;
-  font-family: monospace;
+  line-height: 2rem;
+  text-align: center;
+  width: fit-content(10em);
 `;
 
 const SkillsContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 15px;
+
 `;
 
 const SkillsIcon = styled.div`
@@ -48,7 +82,7 @@ const bounceAnimation = keyframes`
 // `;
 
 const BouncingIcon = styled.div`
-  display: inline-block;
+  display: flex;
   margin: 10px;
   background-color: ${({ name }) => {
     switch (name) {
@@ -79,24 +113,37 @@ const BouncingIcon = styled.div`
   padding: 10px;
   border-radius: 50%;
   animation: ${bounceAnimation} 2s infinite;
+
+
 `;
 
 const AboutMe = () => {
   return (
     
-    <><DarkBackground /><ResponsiveNavbar /><AboutContainer>
+    <>
+      {/* <ThemeProvider theme={theme}>
+        <LightTheme>
+       
+    
+        </LightTheme>
+        <DarkTheme>
+        
+        </DarkTheme>
+       
+        <DeepTheme>
+      <p>Welcome</p>
+        </DeepTheme>
+      </ThemeProvider> */}
+      {/* <Footer /> */}
+   <DarkBackground /> 
+    <ResponsiveNavbar />
+    <AboutContainer>
       <AboutTitle>About Me</AboutTitle>
       <AboutDescription>
-        As a full stack software engineer, I'm fueled by my passion for start-up businesses and the ever-evolving tech world.
-        I thrive on turning innovative ideas into scalable solutions that have a meaningful impact. With a strong foundation in web
-        development and a constant drive to learn, I'm dedicated to crafting exceptional digital experiences that push boundaries
-        and drive success. Let's build something amazing together!
-      </AboutDescription>
+      As a full-stack software engineer, I'm fueled by my passion for helping and contributing to the tech world and start-up businesses. With a strong foundation in web development, I strive to create innovative solutions and seamless user experiences. I love tackling complex challenges and delivering high-quality results, from building scalable web applications to optimizing database performance. My goal is to shape the future of technology by turning innovative ideas into scalable solutions that have a meaningful impact. Let's join forces and build something amazing together!
+       </AboutDescription>
       <AboutTitle>My Skills</AboutTitle>
       <SkillsContainer>
-        {/* <SkillsIcon><SiHtml5 /></SkillsIcon>
-      <SkillsIcon><SiCss3 /></SkillsIcon>
-      <SkillsIcon><SiJavascript /></SkillsIcon> */}
         <BouncingIcon>
           <SiHtml5 size={32} color="#E34F26" />
         </BouncingIcon>
@@ -133,7 +180,9 @@ const AboutMe = () => {
           <SiReact size={32} />
         </BouncingIcon>
       </SkillsContainer>
-    </AboutContainer><Footer /></>
+    </AboutContainer>
+    <Footer />
+   </>
   );
 };
 

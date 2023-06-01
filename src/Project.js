@@ -3,16 +3,13 @@ import styled from 'styled-components';
 import { DarkBackground, LightBackground } from './DarkBackground';
 import Footer from './Footer';
 import ResponsiveNavbar from './ResponsiveNavbar';
-// import ScrollToTop from './ScrollToTop';
-// import ScrollToTopButton from './ScrollToTopButton';
-// import ScrollToTopButtonMobile from './ScrollToTopButtonMobile';
-// import ScrollToTopButtonMobileSmall from './ScrollToTopButtonMobileSmall';
-// import ScrollToTopButtonMobileSmaller from './ScrollToTopButtonMobileSmaller';
-// import ScrollToTopButtonMobileSmallest from './ScrollToTopButtonMobileSmallest';
-// import ScrollToTopButtonMobileSmallestSmall from './ScrollToTopButtonMobileSmallestSmall';
 
 const ProjectSection = styled.section`
-  padding: 60px 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 2rem;
+
 
   h2 {
     font-size: 24px;
@@ -22,9 +19,12 @@ const ProjectSection = styled.section`
 `;
 
 const ProjectCard = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+
 
   img {
     width: 200px;
@@ -60,6 +60,14 @@ const ProjectCard = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+  }
 `;
 
 const Project = () => {
@@ -72,7 +80,7 @@ const Project = () => {
       <ProjectCard>
         <img src="project-image-1.jpg" alt="Project 1" />
         <div className="project-info">
-          <h3>Random Api Quote Generator 1</h3>
+          <h3>Random Api Quote Generator</h3>
           <p>Introducing our Random API Quote Generator: an endless source of inspiration and wisdom. Click, and watch as insightful quotes from renowned figures instantly appear. Share these gems with others, sparking motivation in their lives. Start your journey of enlightenment with our Quote Generator today.</p>
           <a href="https://github.com/shirosensei/CRUD-APP.git" className="project-link">View Project</a>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { DarkBackground, LightBackground } from './DarkBackground';
 import Footer from './Footer';
 import ResponsiveNavbar from './ResponsiveNavbar';
@@ -9,6 +10,8 @@ const ContactContainer = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 16px;
+
+
 `;
 
 const ContactTitle = styled.h2`
@@ -47,6 +50,8 @@ const FormButton = styled.button`
   border: none;
   cursor: pointer;
 `;
+
+
 
 const ContactMe = () => {
   const handleSubmit = (event) => {

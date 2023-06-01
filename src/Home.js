@@ -6,11 +6,11 @@ const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90vh;
-  background-color:  #607d8b;
+  min-height: 90vh;
 `;
 
 const HomeContent = styled.div`
+flex: 1;
   text-align: center;
 `;
 
@@ -43,7 +43,7 @@ const Home = () => {
    
     <HomeContainer>
       <HomeContent>
-        <HomeTitle>Hi! Welcome to My Portfolio</HomeTitle>
+        <HomeTitle>Hi, I'm Tozo! Welcome to My Portfolio</HomeTitle>
         <HomeSubtitle>Explore my work and skills</HomeSubtitle>
         <HomeButton href="/project">Get Started</HomeButton>
       </HomeContent>
