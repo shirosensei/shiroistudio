@@ -28,20 +28,19 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-height: 90vh;
+height: 100vh;
 word-break: normal;
 padding: 0 1.5rem;
 
 @media screen and (max-width: 598px) {
-  margin-top: 5.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 10.5rem;
+  
 }
-
 `;
-//   padding: 40px;
-//   background-color: #607d8b;
-// `;
-// background: ${props => props.theme.background.light};
-// color: ${props => props.theme.text};
 
 const AboutTitle = styled.h2`
   font-size: 24px;
@@ -70,10 +69,8 @@ const SkillsContainer = styled.div`
  
 
   @media (max-width: 598px) {
-    
     margin-bottom: 4.5rem;
   }
-
 `;
 
 const SkillsIcon = styled.div`

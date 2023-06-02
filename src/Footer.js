@@ -15,9 +15,7 @@ const FooterContainer = styled.footer`
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
     align-items: center;
-    justify-content: flex-end;
-    
-    
+    justify-content: flex-end;    
   }
 `;
 

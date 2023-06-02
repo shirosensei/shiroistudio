@@ -30,9 +30,27 @@ I'm a full stack software engineer with a passion for helping and contributing t
 
 ## Projects
 
-- **Quote Api Generator**: Brief description of the project. [Live Demo](https://example.com), [Repository](https://github.com/shirosensei/CRUD-APP.git)
-- **Facebook Notification**: ## URL Shortener Microservice project: the perfect tool to make long URLs short and manageable. Say goodbye to lengthy and complex web addresses, and replace them with concise and user-friendly links. Our microservice offers seamless integration, allowing you to effortlessly generate shortened URLs with a single click. Simplify your online experience and share your links with ease using our URL Shortener Microservice.. [Live Demo](https://example.com), [Repository](https://github.com/username/project)
+- **Quote Api Generator**: Quote of the Day from an API, allows users to generate new quotes, store them in a MongoDB database, and manage their collection of quotes. With dark and light modes and a subscription feature, the application provides an engaging and personalized experience for users seeking daily inspiration or motivation. [Live Demo](https://example.com), [Repository](https://github.com/shirosensei/CRUD-APP.git)
 
-##Timestamp Microservice
-### The Timestamp Microservice is a simple and lightweight API that converts Unix timestamps and natural language dates into standardized date and time formats. It accepts a timestamp in either Unix format (seconds since January 1, 1970) or a natural language date (e.g., "January 1, 2022") and returns the corresponding date and time in both Unix and UTC formats. This microservice is useful for developers working with timestamps and date conversions, as well as for anyone looking to quickly convert dates between different formats. Simplify your date and time calculations with the Timestamp Microservice.
+
+- **URL Shortener Microservice**: The perfect tool to make long URLs short and manageable. Say goodbye to lengthy and complex web addresses, and replace them with concise and user-friendly links. Our microservice offers seamless integration, allowing you to effortlessly generate shortened URLs with a single click. Simplify your online experience and share your links with ease using our URL Shortener Microservice. [Live Demo](https://example.com), [Repository](https://github.com/username/project)
+
+
+- **Timestamp Microservice**: The Timestamp Microservice is a simple and lightweight API that converts Unix timestamps and natural language dates into standardized date and time formats. It accepts a timestamp in either Unix format (seconds since January 1, 1970) or a natural language date (e.g., "January 1, 2022") and returns the corresponding date and time in both Unix and UTC formats. This microservice is useful for developers working with timestamps and date conversions, as well as for anyone looking to quickly convert dates between different formats. Simplify your date and time calculations with the Timestamp Microservice.
+[Live Demo](https://example.com), [Repository](https://github.com/username/project)
+
+
+- **Exercise Tracker**: Exercise Tracker application built with HTML, CSS, JavaScript, and MongoDB. The application allows users to store their exercise activities in a MongoDB database and provides a user-friendly interface for managing and viewing their exercise history.
+[Live Demo](https://example.com), [Repository](https://github.com/username/project)
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 

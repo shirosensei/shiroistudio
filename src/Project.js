@@ -9,7 +9,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin: 2rem;
-
+padding-bottom: 5.5rem;
+min-height: 100vh;
 
   h2 {
     font-size: 24px;
@@ -80,8 +81,8 @@ const Project = () => {
       <ProjectCard>
         <img src="project-image-1.jpg" alt="Project 1" />
         <div className="project-info">
-          <h3>Random Api Quote Generator</h3>
-          <p>Introducing our Random API Quote Generator: an endless source of inspiration and wisdom. Click, and watch as insightful quotes from renowned figures instantly appear. Share these gems with others, sparking motivation in their lives. Start your journey of enlightenment with our Quote Generator today.</p>
+          <h3>Api Quote Generator</h3>
+          <p>The Quote API Web App Generator is a web application that allows users to generate, store, and manage quotes. It fetches a daily "Quote of the Day" from an API and provides features such as generating new quotes, storing them in a MongoDB database, and managing the collection. The app also offers dark and light modes and a subscription option for receiving daily quotes via email. It's a convenient and inspiring tool for users seeking daily motivation and personal quote management.</p>
           <a href="https://github.com/shirosensei/CRUD-APP.git" className="project-link">View Project</a>
         </div>
       </ProjectCard>
@@ -107,6 +108,14 @@ const Project = () => {
         <div className="project-info">
             <h3>Timestamp Microservice</h3>
             <p>The Timestamp Microservice is a simple and lightweight API that converts Unix timestamps and natural language dates into standardized date and time formats. It accepts a timestamp in either Unix format (seconds since January 1, 1970) or a natural language date (e.g., "January 1, 2022") and returns the corresponding date and time in both Unix and UTC formats. This microservice is useful for developers working with timestamps and date conversions, as well as for anyone looking to quickly convert dates between different formats. Simplify your date and time calculations with the Timestamp Microservice.</p>
+                <a href="https://github.com/shirosensei/Timestamp-Microservice.git"className='project-link'>View pProject</a>
+        </div>
+      </ProjectCard>
+      <ProjectCard>
+        <img src="project-image-4.jpg" alt="Project 4" />
+        <div className="project-info">
+            <h3>Exercise Tracker</h3>
+            <p> Exercise Tracker application built with HTML, CSS, JavaScript, and MongoDB. The application allows users to store their exercise activities in a MongoDB database and provides a user-friendly interface for managing and viewing their exercise history.</p>
                 <a href="https://github.com/shirosensei/Timestamp-Microservice.git"className='project-link'>View pProject</a>
         </div>
       </ProjectCard>
