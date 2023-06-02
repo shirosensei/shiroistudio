@@ -15,7 +15,13 @@ app.post('/src/ContactMe', (req, res) => {
      // Create a transporter for sending emails
   const transporter = nodemailer.createTransport({
     // Configure the email transport settings (e.g., SMTP)
-    // Refer to Nodemailer documentation for details
+        host: "smtp.example.com",
+        port: 587,
+        secure: false, // upgrade later with STARTTLS
+        auth: {
+            user: "username",
+            pass: "password",
+        },
   });
 
     // Create the email message
