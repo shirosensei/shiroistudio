@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { ThemeProvider  } from 'styled-components';
 
 import { DarkBackground, LightBackground } from './DarkBackground';
@@ -80,7 +80,7 @@ const FormField = styled.input`
   margin-bottom: 12px;
   border: 2px solid ${props => props.theme.colors.pastel};
   border-radius: 5px;
-  color: ${props => props.theme.colors.light};
+  color: ${props => props.theme.colors.darkGray};
   
  
   &:hover {
@@ -137,12 +137,37 @@ const FormButton = styled.button`
 
 
 const ContactMe = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission logic
-     console.log(event.target.name.value);
 
-  };
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+  
+    const handleNameChange = (event) => {
+      setName(event.target.value);
+    };
+  
+    const handleEmailChange = (event) => {
+      setEmail(event.target.value);
+    };
+  
+    const handleMessageChange = (event) => {
+      setMessage(event.target.value);
+    };
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+  
+      // Perform form submission or data processing here
+      console.log('Name:', name);
+      console.log('Email:', email);
+      console.log('Message:', message);
+  
+      // Clear form fields
+      setName('');
+      setEmail('');
+      setMessage('');
+    };
+  
 
   return (
     <>
@@ -151,11 +176,11 @@ const ContactMe = () => {
     <ResponsiveNavbar />
     <ContactContainer>
       <ContactTitle>Contact Me</ContactTitle>
-      <FormContainer>
+      <FormContainer action="../server">
       <ContactForm onSubmit={handleSubmit}>
-        <FormField type="text" id="name" placeholder="Name" />
-        <FormField type="email" id="email" placeholder="Email" />
-        <FormTextarea id="message" placeholder="Message"></FormTextarea>
+        <FormField type="text" value={name} onChange={handleNameChange} placeholder="Name" />
+        <FormField type="email"  value={email} onChange={handleEmailChange} placeholder="Email" />
+        <FormTextarea value={message} onChange={handleMessageChange} placeholder="Message"></FormTextarea>
         <FormButton type="submit">Submit</FormButton>
       </ContactForm>
       </FormContainer>
