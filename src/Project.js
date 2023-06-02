@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DarkBackground, LightBackground } from './DarkBackground';
+import { DarkBackground } from './DarkBackground';
 import Footer from './Footer';
 import ResponsiveNavbar from './ResponsiveNavbar';
 

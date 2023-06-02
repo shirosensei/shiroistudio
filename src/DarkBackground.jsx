@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 // Create a global style component
 export const DarkBackground = createGlobalStyle`

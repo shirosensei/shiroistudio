@@ -1,27 +1,9 @@
 import React from 'react';
-import styled, { keyframes, ThemeProvider  } from 'styled-components';
-import { SiHtml5, SiCss3, SiJavascript, SiMongodb, SiPostman, SiNodeDotJs, SiNextDotJs, SiBootstrap, SiTailwindcss, SiGit, SiSass, SiPhp, SiReact } from 'react-icons/si';
-import { DarkBackground, LightBackground } from './DarkBackground';
+import styled, { keyframes } from 'styled-components';
+import { SiHtml5, SiCss3, SiJavascript, SiMongodb, SiPostman, SiBootstrap, SiTailwindcss, SiGit, SiSass, SiPhp, SiReact } from 'react-icons/si';
+import { DarkBackground } from './DarkBackground';
 import Footer from './Footer';
 import ResponsiveNavbar from './ResponsiveNavbar';
-
-const theme = {
-  background: {
-    light: '#f5f5f5',
-    dark: '#1a1a1a',
-    deep: '#607d8b'
-  },
-};
-
-const LightTheme = styled.div`
-background: ${props => props.theme.background.light};
-`
-const DarkTheme = styled.div`
-background: ${props => props.theme.background.dark};
-`
-const DeepTheme = styled.div`
-background: ${props => props.theme.background.deep};
-`
 
 const AboutContainer = styled.div`
 display: flex;
@@ -73,23 +55,12 @@ const SkillsContainer = styled.div`
   }
 `;
 
-const SkillsIcon = styled.div`
-  font-size: 48px;
-  margin: 0 16px;
-  color: black;
-`;
-
 // Define the bounce animation
 const bounceAnimation = keyframes`
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 `;
-
-// // Styled component for the icon with animation
-// const BouncingIcon = styled.div`
-//   animation: ${bounceAnimation} 2s infinite;
-// `;
 
 const BouncingIcon = styled.div`
   display: flex;
