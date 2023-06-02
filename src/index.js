@@ -17,7 +17,7 @@ root.render(
       <Route path="contact"  element={<ContactMe />} />
       <Route path="project"  element={<Project />} />
       <Route path="*" element={<NotFound />} />
-    </Routes>
+      </Routes>
     </BrowserRouter>
     
   </React.StrictMode>
