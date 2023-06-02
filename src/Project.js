@@ -8,14 +8,21 @@ const ProjectSection = styled.section`
 display: flex;
 flex-direction: column;
 align-items: center;
-margin: 2rem;
-padding-bottom: 5.5rem;
-min-height: 100vh;
+padding: 2rem;
+min-height: 90vh;
 
   h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 40px;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 500px) {
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
   }
 `;
 
@@ -23,22 +30,16 @@ const ProjectCard = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
 
-
+.project-info {
+  padding: 1.5rem 0;
+}
 
   img {
     width: 200px;
     height: auto;
     margin-right: 20px;
   }
-
-  .project-info {
-    h3 {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
 
     p {
       font-size: 14px;
@@ -54,7 +55,6 @@ justify-content: center;
       text-decoration: none;
       border-radius: 4px;
       font-size: 14px;
-      transition: background-color 0.3s ease;
 
       &:hover {
         background-color: #666;
@@ -77,12 +77,12 @@ const Project = () => {
     <DarkBackground />
     <ResponsiveNavbar />
     <ProjectSection>
-      <h2>Projects</h2>
+      <h2>My Portfolio</h2>
       <ProjectCard>
         <img src="project-image-1.jpg" alt="Project 1" />
         <div className="project-info">
           <h3>Api Quote Generator</h3>
-          <p>The Quote API Web App Generator is a web application that allows users to generate, store, and manage quotes. It fetches a daily "Quote of the Day" from an API and provides features such as generating new quotes, storing them in a MongoDB database, and managing the collection. The app also offers dark and light modes and a subscription option for receiving daily quotes via email. It's a convenient and inspiring tool for users seeking daily motivation and personal quote management.</p>
+          <p>The Quote API Web App Generator is a powerful tool for generating, storing, and managing quotes. It fetches a daily "Quote of the Day" from an API and offers features like quote generation, storage in a MongoDB database, and easy management. With dark and light modes and a subscription option, it's the perfect solution for those seeking daily motivation and seamless quote management.</p>
           <a href="https://github.com/shirosensei/CRUD-APP.git" className="project-link">View Project</a>
         </div>
       </ProjectCard>
@@ -90,25 +90,16 @@ const Project = () => {
         <img src="project-image-2.jpg" alt="Project 2" />
         <div className="project-info">
           <h3>URL-Shortener-Microservice</h3>
-          <p>URL Shortener Microservice project: the perfect tool to make long URLs short and manageable. Say goodbye to lengthy and complex web addresses, and replace them with concise and user-friendly links. Our microservice offers seamless integration, allowing you to effortlessly generate shortened URLs with a single click. Simplify your online experience and share your links with ease using our URL Shortener Microservice.</p>
+          <p>URL Shortener Microservice simplifies long URLs, making them concise and user-friendly. Say goodbye to complex web addresses and effortlessly generate shortened links with a single click. Share your links seamlessly using our service, simplifying your online experience</p>
           <a href="https://github.com/shirosensei/URL-Shortener-Microservice.git" className="project-link">View Project</a>
         </div>
       </ProjectCard>
       <ProjectCard>
         <img src="project-image-3.jpg" alt="Project 3" />
         <div className="project-info">
-            <h3>Employee Directory</h3>
-            <p>Employee Directory project: a CLI employee directory that allows users to view employees, add employees, and search employees. Employee Directory is a CLI application that allows users to view employees, add employees, and search employees. Employee Directory
-                </p>
-                <a href="https://github.com/"className='project-link'>View pProject</a>
-        </div>
-      </ProjectCard>
-      <ProjectCard>
-        <img src="project-image-3.jpg" alt="Project 4" />
-        <div className="project-info">
             <h3>Timestamp Microservice</h3>
-            <p>The Timestamp Microservice is a simple and lightweight API that converts Unix timestamps and natural language dates into standardized date and time formats. It accepts a timestamp in either Unix format (seconds since January 1, 1970) or a natural language date (e.g., "January 1, 2022") and returns the corresponding date and time in both Unix and UTC formats. This microservice is useful for developers working with timestamps and date conversions, as well as for anyone looking to quickly convert dates between different formats. Simplify your date and time calculations with the Timestamp Microservice.</p>
-                <a href="https://github.com/shirosensei/Timestamp-Microservice.git"className='project-link'>View pProject</a>
+            <p>The Timestamp Microservice simplifies date and time conversions by converting Unix timestamps and natural language dates into standardized formats. It is a lightweight API that accepts various inputs and provides corresponding Unix and UTC formats.</p>
+                <a href="https://github.com/shirosensei/Timestamp-Microservice.git"className='project-link'>View Project</a>
         </div>
       </ProjectCard>
       <ProjectCard>
@@ -116,7 +107,7 @@ const Project = () => {
         <div className="project-info">
             <h3>Exercise Tracker</h3>
             <p> Exercise Tracker application built with HTML, CSS, JavaScript, and MongoDB. The application allows users to store their exercise activities in a MongoDB database and provides a user-friendly interface for managing and viewing their exercise history.</p>
-                <a href="https://github.com/shirosensei/Timestamp-Microservice.git"className='project-link'>View pProject</a>
+                <a href="https://github.com/shirosensei/Timestamp-Microservice.git"className='project-link'>View Project</a>
         </div>
       </ProjectCard>
     </ProjectSection>

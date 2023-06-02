@@ -28,7 +28,6 @@ margin: 1.5rem 0;
   font-size: 14px;
   line-height: 1.5rem;
   margin: 3.5rem 0;
-
 }
 `;
 

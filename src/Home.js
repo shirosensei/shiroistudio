@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import 'animate.css';
 
 const HomeContainer = styled.div`
   display: flex;
@@ -17,19 +17,36 @@ flex: 1;
 const HomeTitle = styled.h1`
   font-size: 32px;
   color: #333;
-  margin-bottom: 16px;
-  @media (max-width: 768px) {
-    .break-word {
-      word-break: break-word;
-    }
+
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+    /* Adjust input styles for the targeted screen sizes */;
+    font-weight: 400;
+    font-size: 18px;
   }
   
+  @media only screen and (max-width: 769px) {
+    font-size: 20px;
+  }
 `;
 
-const HomeSubtitle = styled.h2`
+const HomeSubtitle = styled.p`
   font-size: 18px;
   color: #fff;
   margin-bottom: 24px;
+  animation: animate__backInRight 2s;
+
+@media only screen and (min-width: 320px) and (max-width: 498px) {
+    /* Adjust input styles for the targeted screen sizes */
+    padding: 1.4rem;
+    font-weight: lighter;
+    font-size: 12px;
+  }
+
+  @media only screen and (max-width: 769px) {
+    font-size: 1rem;
+    padding: 0 1.8rem;
+    font-weight: 400; /* normal */
+  }
 `;
 
 const HomeButton = styled.a`
@@ -41,16 +58,33 @@ const HomeButton = styled.a`
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
+
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+    /* Adjust input styles for the targeted screen sizes */
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: .6rem;
+    font-weight: 400; /* normal */
+  }
+
+  &:hover {
+    background-color: #0069d9;
+  }
 `;
 
 const Home = () => {
+
   return (
     <>
    
     <HomeContainer>
       <HomeContent>
         <HomeTitle>Hi, I'm Tozo! Welcome to My Portfolio</HomeTitle>
-        <HomeSubtitle>Explore my work and skills</HomeSubtitle>
+        <HomeSubtitle className="animate__animated animate__backInRight">Discover my impressive portfolio of projects that exhibit my expertise in web and mobile development. 
+        </HomeSubtitle>
         <HomeButton href="/project">Get Started</HomeButton>
       </HomeContent>
     </HomeContainer>

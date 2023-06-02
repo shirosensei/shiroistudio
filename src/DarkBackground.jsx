@@ -47,6 +47,7 @@ export const DarkBackground = createGlobalStyle`
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    border-box: box-sizing;
   }
 
   @media only screen and (min-width: 320px) and (max-width: 498px) {
