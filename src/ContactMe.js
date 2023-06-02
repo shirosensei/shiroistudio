@@ -46,14 +46,25 @@ const ContactContainer = styled.div`
 
 const ContactTitle = styled.h2`
   font-size: 24px;
+  text-align: center;
 `;
+
+const ContactText = styled.p`
+font-size: 16px;
+text-align: center;
+
+@media only screen and (min-width: 320px) and (max-width: 498px) {
+  /* Adjust input styles for the targeted screen sizes */
+  font-size: 14px;
+}
+`
 
 const FormContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-width: 70%;
+width: 60%;
 height: 65%;
 border: 2px solid ${props => props.theme.colors.offwhite};
 border-radius: 5px;
@@ -62,9 +73,14 @@ overflow: hidden;
 padding: 20px;
 
 @media (max-width: 768px) {
-  width: 80%;
+  width: 60%;
   height: 50%;
   padding: 1.5rem;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+    margin: 1.5rem 0;
+    padding: 4rem .75rem;
   }
 
   `
@@ -98,7 +114,12 @@ const FormField = styled.input`
     &:focus {
       border-color: ${props => props.theme.colors.pastel};
     }
+  }
 
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+    /* Adjust button styles for the targeted screen sizes */
+    padding: 2px;
+    font-size: 14px;
   }
 `;
 
@@ -125,13 +146,20 @@ const FormTextarea = styled.textarea`
 `;
 
 const FormButton = styled.button`
-  padding: 8px 16px;
+padding: 10px 20px;
   margin-top: 12px;
   background-color: #333;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 3.3px;
+  width: 50%;
+
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+    padding: 8px 16px;
+    font-size: 14px;
+    text-align: center;
+  }
 `;
 
 
@@ -175,8 +203,12 @@ const ContactMe = () => {
     <DarkBackground />
     <ResponsiveNavbar />
     <ContactContainer>
-      <ContactTitle>Contact Me</ContactTitle>
-      <FormContainer action="../server">
+      <ContactTitle>Contact Me
+      </ContactTitle>
+      <ContactText>
+      Have a question or want to collaborate? Let's connect!
+      </ContactText>
+       <FormContainer action="../server">
       <ContactForm onSubmit={handleSubmit}>
         <FormField type="text" value={name} onChange={handleNameChange} placeholder="Name" />
         <FormField type="email"  value={email} onChange={handleEmailChange} placeholder="Email" />

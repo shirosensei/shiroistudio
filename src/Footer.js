@@ -17,11 +17,23 @@ const FooterContainer = styled.footer`
     align-items: center;
     justify-content: flex-end;    
   }
+
+  
+@media only screen and (min-width: 320px) and (max-width: 498px) {
+  /* Styles for screens between 320px and 498px */
+  padding: .75rem 0;
+}
 `;
 
 const FooterText = styled.p`
   font-size: 1rem;
   margin: 0;
+
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+    /* Styles for screens between 320px and 498px */
+    font-size: 0.7rem;
+  }
+  
 `;
 
 const Anchor = styled.a`
@@ -29,6 +41,12 @@ text-decoration: none;
 color: #fff;
 font-size: 1.5rem;
 padding: .5rem;
+
+
+@media only screen and (min-width: 320px) and (max-width: 498px) {
+  /* Styles for screens between 320px and 498px */
+  font-size: .75rem;
+}
 `
 
 const FooterIcon = styled.div`
@@ -38,6 +56,8 @@ margin: 0;
 @media screen and (max-width: 768px) {
   margin-bottom: 1.2rem;
 }
+
+
 `
 
 

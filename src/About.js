@@ -12,7 +12,8 @@ align-items: center;
 justify-content: center;
 height: 100vh;
 word-break: normal;
-padding: 0 1.5rem;
+padding: 1.5rem 1.5rem;
+margin: 1.5rem 0;
 
 @media screen and (max-width: 598px) {
   display: flex;
@@ -20,7 +21,14 @@ padding: 0 1.5rem;
   align-items: center;
   margin-top: 2rem;
   padding-top: 10.5rem;
-  
+}
+
+@media only screen and (min-width: 320px) and (max-width: 498px) {
+  /* Adjust input styles for the targeted screen sizes */
+  font-size: 14px;
+  line-height: 1.5rem;
+  margin: 3.5rem 0;
+
 }
 `;
 
@@ -29,6 +37,12 @@ const AboutTitle = styled.h2`
   color: #333;
   margin-bottom: 16px;
   text-align: center;
+
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+    /* Adjust input styles for the targeted screen sizes */
+    padding: 8px;
+    font-size: 18px;
+  }
 `;
 
 const AboutDescription = styled.p`
@@ -39,6 +53,13 @@ const AboutDescription = styled.p`
   text-align: center;
   width: fit-content(10em);
   break-word: break-word;
+
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+    /* Adjust input styles for the targeted screen sizes */
+    padding: 8px;
+    font-size: 14px;
+  }
+
 `;
 
 const SkillsContainer = styled.div`
@@ -46,13 +67,11 @@ const SkillsContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
-
- 
 
   @media (max-width: 598px) {
     margin-bottom: 4.5rem;
   }
+
 `;
 
 // Define the bounce animation
@@ -95,7 +114,11 @@ const BouncingIcon = styled.div`
   border-radius: 50%;
   animation: ${bounceAnimation} 2s infinite;
 
-
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+    /* Adjust input styles for the targeted screen sizes */
+    margin: 0.5rem 0.75rem;
+    padding: 5px;
+  }
 `;
 
 const AboutMe = () => {

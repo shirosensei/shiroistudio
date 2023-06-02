@@ -49,6 +49,10 @@ export const DarkBackground = createGlobalStyle`
     padding: 0;
   }
 
+  @media only screen and (min-width: 320px) and (max-width: 498px) {
+      font-size: 11.35px; /* 18px divided by 16px (base font size) */
+  }
+  
 }
 `;
 
