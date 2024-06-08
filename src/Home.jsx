@@ -6,7 +6,6 @@ import "animate.css";
 import home from "./assets/home.jpg";
 import arrow from "./assets/chevron.png";
 
-
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -64,13 +63,12 @@ const Button = styled.button`
   animation: bounce 15s infinite;
 
   img {
-  width: 50px;
-  height: auto;
+    width: 50px;
+    height: auto;
     transform: rotate(180deg);
     max-width: 100%;
     opacity: 0.8;
   }
-
 
   &:hover {
     background-color: transparent;
@@ -155,8 +153,8 @@ const Home = () => {
       (max-width: 1200px) 50vw, 33vw,
       "
             alt="Tozo's Logo"
-
-            // width={150}
+            width="100%"
+            height="100%"
           />
         </ImageCard>
 
@@ -171,7 +169,7 @@ const Home = () => {
 
           <Button>
             <Link to="project" smooth={true} duration={300}>
-              <img src={arrow} alt="arrow" />
+              <img src={arrow} alt="arrow" width="100%" height="100%" />
             </Link>
           </Button>
         </Wrapper>

@@ -53,7 +53,7 @@ const FooterIcon = styled.div`
 background-color: inherit;
 margin: 0;
 
-@media screen and (max-width: 768px) {
+@media (width <= 768px) {
   margin-bottom: 1.2rem;
 }
 
@@ -68,14 +68,14 @@ const Footer = () => {
     <Container>
       <FooterText>© 2024 Tozo Sensei. All rights reserved.</FooterText>
       <FooterIcon>
-      <Anchor href="https://twitter.com/shiroi_sensei">
+      <Anchor href="https://twitter.com/shiroi_sensei" aria-label="Twitter" title='Twitter'>
         <SiTwitter />
       </Anchor>
-      <Anchor href="https://github.com/shirosensei">
+      <Anchor href="https://github.com/shirosensei"  aria-label="GitHub" title='GitHub'>
         <SiGithub />
       </Anchor>
-      <Anchor href="https://linkedin.com/in/codersensei">
-        <SiLinkedin  />
+      <Anchor href="https://linkedin.com/in/codersensei"  aria-label="LinkedIn" title='LinkedIn'>
+        <SiLinkedin />
       </Anchor>
       </FooterIcon>
     </Container>
