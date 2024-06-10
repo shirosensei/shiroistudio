@@ -1,7 +1,7 @@
 import React from 'react'
 import { DarkBackground } from './DarkBackground';
 import Footer from './Footer';
-import ResponsiveNavbar from './Navbar';
+import Navbar from './Navbar';
 import styled from 'styled-components';
 import { RiErrorWarningLine } from 'react-icons/ri';
 
@@ -18,7 +18,7 @@ const NotFounds = () => {
   return (
     <>
     <DarkBackground />
-    <ResponsiveNavbar />
+    <Navbar />
     <Container>
       <h1>404</h1>
       <RiErrorWarningLine className="icon" />
