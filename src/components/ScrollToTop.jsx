@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowUp } from 'react-icons/fa';
-import '../assets/scrollButton.css';
+// import { FaArrowUp } from 'react-icons/fa';
+import "../assets/scrollButton.css";
+import arrowDown from "../assets/arrow-down.png";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,11 +16,13 @@ const ScrollToTop = () => {
 
   // Todo Scroll the page to the top
   const scrollToTop = () => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-      window.scrollTo({
+    window.scrollTo({
       top: 0,
-      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      behavior: prefersReducedMotion ? "auto" : "smooth",
     });
   };
 
@@ -29,18 +32,26 @@ const ScrollToTop = () => {
     return () => {
       window.removeEventListener("scroll", toggleVisibility);
     };
-  }, [ ]);
+  }, []);
 
   return (
-    <div
-      className="scroll-to-top">
-        {isVisible && (
-          <button onClick={scrollToTop}
+    <div className="scroll-to-top">
+      {isVisible && (
+        <button
+          onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="scroll-button">
-            <FaArrowUp className="scroll-icon" />
-          </button>
-        )}      
+          className="scroll-button"
+        >
+          {/* <FaArrowUp className="scroll-icon" /> */}
+          <img
+            src={arrowDown}
+            alt="scroll up"
+            className="scroll-up scroll-icon"
+            width="100%"
+            height="100%"
+          />
+        </button>
+      )}
     </div>
   );
 };
