@@ -1,19 +1,18 @@
 /* Scroll-to-top button styles */
 .scroll-to-top {
     position: fixed;
-    bottom: 30px; /* Distance from the bottom of the screen */
+    bottom: 100px; /* Distance from the bottom of the screen */
     right: 30px; /* Distance from the right side of the screen */
     z-index: 99999; /* Ensure it's above other content */
   }
   
     .scroll-button {
-      background-color: chocolate;
-      color: white;
-      padding: 10px;
+      background-color: var(--accent-color);    
+      padding: 5px;
       border-radius: 50%;
       cursor: pointer;
       opacity: 0.8;
-      transition:  transform 0.3s ease-in-out;
+      transform:  rotate(180deg);
       border-radius: none;
       border: none;
       width: auto;
@@ -22,19 +21,25 @@
     
     .scroll-button:hover {
       opacity: 1;
-      background-color: chocolate;
+      background-color: rgb(41, 39, 37);
       border: none; }
     
     .scroll-icon {
       font-size: 24px; /* Adjust the size of the arrow icon */
     }
     
+    .scroll-up {
+      width: 24px;
+      height: auto;
+      filter: brightness(0) invert(1); /* Makes black parts white */
+    }
+
     /* Hide the button initially */
-    .scroll-to-top .scroll-button{
+    .scroll-to-top .scroll-button, .scroll-up{
       display: none;
     }
     
-    .scroll-to-top .scroll-button {
+    .scroll-to-top .scroll-button, .scroll-up {
       display: block;
     }
     
