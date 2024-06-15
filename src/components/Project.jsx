@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ImagePlaceholder from "./ImagePlaceholder";
 import placeholder from "../assets/placeholder.png";
+const LazyLoadedImage = React.lazy(() => import("./ImagePlaceholder"));
 
 //! transient props anchor link to external site
 const Link = ({ className, text, ...props }) => (
@@ -33,23 +34,21 @@ const ProjectSection = styled.section`
 `;
 
 const ProjectCard = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-gap: 16px;
+  // flex-direction: column;
+  // align-items: center;
   margin: 20px 0;
+  padding: 16px;
 
-  
-
-    p {
-      font-size: 14px;
-      margin-bottom: 10px;
-      line-height: 26px;
-    }
-
-    
+  p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 26px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media (width <= 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,33 +58,32 @@ align-items: center;
 `;
 
 const ImageContainer = styled.div`
-  position: relative;
+  width: 100%;
+  margin: 0 auto;
   overflow: hidden;
+  aspect-ratio: 3 / 2;
 `;
 
 const ProjectInfo = styled.div`
   display: inline-block;
   text-align: center;
 
-  h3 { 
-      color: var(--white);
-       fontWeight: '600';
-    }
-
-  p { 
-
-   }
+  h3 {
+    color: var(--white);
+    fontweight: "600";
+  }
 `;
 
 const ProjectLinks = styled.div`
   margin: 0 auto;
   padding: 10px 0;
-  margin: 20px;
+  margin: 20px 0;
 `;
 
 //? Styled transient props anchor tag
 const StyledLink = styled(Link)`
-  color: ${(props) => (props.$primary ? "var(--gunmetal)" : "var(--accent-color)")};
+  color: ${(props) =>
+    props.$primary ? "var(--gunmetal)" : "var(--accent-color)"};
   background-color: ${(props) =>
     props.$primary ? "var(--accent-color)" : "var(--onyx)"};
   border: 2px solid
@@ -111,10 +109,12 @@ const Project = () => {
         <h2>Tozo's Creation</h2>
         <ProjectCard>
           <ImageContainer>
-            <ImagePlaceholder
-              src={placeholder}
+            <LazyLoadedImage
+              src="https://github.com/shirosensei/Quote-Generator/raw/main/Animation.gif"
               placeholderSrc={placeholder}
               alt="Api Quote Generator"
+              width="600"
+              height="400"
             />
           </ImageContainer>
 
@@ -124,16 +124,16 @@ const Project = () => {
               The Quote API Web App Generator is a powerful tool for generating,
               storing, and managing quotes. It fetches a daily "Quote of the
               Day" from an API and offers features like quote generation,
-              storage in a MongoDB database, and easy management. 
+              storage in a MongoDB database, and easy management.
             </p>
             <ProjectLinks>
               <StyledLink
-                href="https://github.com/shirosensei/Quote-Generator-.git"
+                href="https://github.com/shirosensei/Quote-Generator.git"
                 text="Github Repo"
                 $primary
               />
 
-              <StyledLink href="https://duckduck.com" text="Live Demo" />
+              <StyledLink href="#/" text="Live Demo" />
             </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
@@ -144,14 +144,17 @@ const Project = () => {
               src={placeholder}
               placeholderSrc={placeholder}
               alt="CurrencXchange"
+              width="600"
+              height="400"
             />
           </ImageContainer>
 
           <ProjectInfo>
-            <h3>CurrencyXchange
-            </h3>
+            <h3>CurrencyXchange</h3>
             <p>
-            CurrencyXchange is a web application that allows users to compare real-time exchange rates, manage their currency portfolios, and perform currency conversions.
+              CurrencyXchange is a web application that allows users to compare
+              real-time exchange rates, manage their currency portfolios, and
+              perform currency conversions.
             </p>
             <ProjectLinks>
               <StyledLink
@@ -160,7 +163,7 @@ const Project = () => {
                 $primary
               />
 
-              <StyledLink href="https://duckduckgo.com" text="Live Demo" />
+              <StyledLink href="#/" text="Live Demo" />
             </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
@@ -171,13 +174,16 @@ const Project = () => {
               src={placeholder}
               placeholderSrc={placeholder}
               alt="Github Repo"
+              width="600"
+              height="400"
             />
           </ImageContainer>
 
           <ProjectInfo>
             <h3>HairHarmony</h3>
             <p>
-            This project is a comprehensive hair salon booking website where customers can book sessions for various hair services. 
+              This project is a comprehensive hair salon booking website where
+              customers can book sessions for various hair services.
             </p>
             <ProjectLinks>
               <StyledLink
@@ -186,7 +192,7 @@ const Project = () => {
                 $primary
               />
 
-              <StyledLink href="https://duckduckgo.com" text="Live Demo" />
+              <StyledLink href="#/" text="Live Demo" />
             </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
@@ -197,6 +203,8 @@ const Project = () => {
               src={placeholder}
               placeholderSrc={placeholder}
               alt="Exercise Tracker Web App"
+              width="600"
+              height="400"
             />
           </ImageContainer>
 
@@ -214,7 +222,7 @@ const Project = () => {
                 $primary
               />
 
-              <StyledLink href="https://duckduck.com" text="Live Demo" />
+              <StyledLink href="#/" text="Live Demo" />
             </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
