@@ -11,7 +11,7 @@ const Header = styled.header`
   color: var(--anti-flash-white);
 
   @media (min-width: 1000px) {
-    padding: 1.5rem 2rem;
+    padding: 0.5rem 2rem;
   }
 `;
 
@@ -24,10 +24,11 @@ const Hamburger = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  // outline: 3px solid gray;
 
   span {
     width: 25px;
-    height: 3px;
+    height: 2px;
     background-color: var(--anti-flash-white);
     margin: 4px 0;
     transition: transform 0.3s ease;
@@ -41,7 +42,7 @@ const Hamburger = styled.div`
     isOpen &&
     `
     span:nth-child(1) {
-      transform: rotate(45deg) translate(10px, 19px);
+      transform: rotate(45deg) translate(11px, 20px);
     }
 
     span:nth-child(2) {
@@ -59,12 +60,17 @@ const NavigationMenu = styled.nav`
   position: absolute;
   top: 57px;
   right: 20px;
+  left: 0;
   background-color: var(--gunmetal);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 1.8rem 0;
-  width: 150px;
+  padding-bottom: 1.2rem;
+  width: 100%;
   text-align: center;
+  z-index: 9999999;
+
+  ul {
+    display: inline;
+    list-style: none;
+  }
 
   @media (min-width: 768px) {
     position: static;
@@ -74,6 +80,10 @@ const NavigationMenu = styled.nav`
     background-color: transparent;
     padding: 0;
     text-align: right;
+
+    ul {
+      display: inline-flex;
+    }
   }
 
   @media (min-width: 1920px) {
@@ -83,8 +93,6 @@ const NavigationMenu = styled.nav`
 `;
 
 const MenuLink = styled.li`
-  list-style: none;
-
   @media (min-width: 768px) {
     margin: 0 1rem;
   }
@@ -95,19 +103,9 @@ const NavigationLink = styled(Link)`
   color: var(--anti-flash-white);
   cursor: pointer;
   padding: 7px 2px;
-  transition: border-bottom 0.2s ease-in-out;
 
   &:hover {
     color: var(--accent-color);
-    border-bottom: 2px solid;
-  }
-
-  @media (max-width: 768px) {
-    &:hover {
-      background-color: var(--accent-color);
-      color: var(--anti-flash-white);
-      opacity: 0.5;
-    }
   }
 `;
 
@@ -130,37 +128,39 @@ const Navbar = () => {
 
       {/* Todo Navigation Menu */}
       <NavigationMenu isOpen={isOpen}>
-        <MenuLink>
-          <NavigationLink
-            to="about"
-            smooth={true}
-            duration={300}
-            onClick={toggleMenu}
-          >
-            My Story
-          </NavigationLink>
-        </MenuLink>
+        <ul>
+          <MenuLink>
+            <NavigationLink
+              to="about"
+              smooth={true}
+              duration={300}
+              onClick={toggleMenu}
+            >
+              My Story
+            </NavigationLink>
+          </MenuLink>
 
-        <MenuLink>
-          <NavigationLink
-            to="project"
-            smooth={true}
-            duration={300}
-            onClick={toggleMenu}
-          >
-            My Creations
-          </NavigationLink>
-        </MenuLink>
-        <MenuLink>
-          <NavigationLink
-            to="contact"
-            smooth={true}
-            duration={300}
-            onClick={toggleMenu}
-          >
-            Collaborate
-          </NavigationLink>
-        </MenuLink>
+          <MenuLink>
+            <NavigationLink
+              to="project"
+              smooth={true}
+              duration={300}
+              onClick={toggleMenu}
+            >
+              My Creations
+            </NavigationLink>
+          </MenuLink>
+          <MenuLink>
+            <NavigationLink
+              to="contact"
+              smooth={true}
+              duration={300}
+              onClick={toggleMenu}
+            >
+              Collaborate
+            </NavigationLink>
+          </MenuLink>
+        </ul>
       </NavigationMenu>
     </Header>
   );
