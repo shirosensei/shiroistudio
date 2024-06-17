@@ -98,7 +98,7 @@ const Span = styled.span`
   cursor: pointer;
 
   &:hover {
-    animation: ${boundIn} 1s ease-in;
+    animation: ${boundIn} 5s ease-in;
   }
 `;
 
