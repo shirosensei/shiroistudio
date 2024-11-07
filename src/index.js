@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import AboutMe from './About';
-import ContactMe from './ContactMe';
-import Project from './Project';
-import NotFound from './NotFound';
+
+
+import NotFound from './components/NotFound';
+import './assets/styles.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-        <BrowserRouter>
+        {/* <BrowserRouter>
     <Routes>
     <Route path="/"  element={<App />} />
       <Route path="about"  element={<AboutMe />} />
@@ -18,7 +17,8 @@ root.render(
       <Route path="project"  element={<Project />} />
       <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <App />
     
   </React.StrictMode>
 );

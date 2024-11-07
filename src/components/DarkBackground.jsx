@@ -20,8 +20,13 @@ export const DarkBackground = createGlobalStyle`
 
    /* Professional and Corporate: */
 
-    --blue-gray: #607d8b;
+    --space-cadet: #192A51;
     --beige: #f5f5dc;
+    --gunmetal: #222831;
+    --onyx: #393E46;
+    --anti-flash-white: #EEEEEE;
+    --mustard: #FFD369;
+
 
     /* Bold and Vibrant */
 
@@ -41,9 +46,10 @@ export const DarkBackground = createGlobalStyle`
       --dark-gray: #333333;
 
   /* Global styles */
+  
   body {
-    background-color: var(--blue-gray);
-    color: var(--text-color);
+    background-color: var(--space-cadet);
+    color: var(--mustard);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;

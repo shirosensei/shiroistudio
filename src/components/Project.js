@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DarkBackground } from './DarkBackground';
-import Footer from './Footer';
-import ResponsiveNavbar from './ResponsiveNavbar';
+
 
 const ProjectSection = styled.section`
 display: flex;
@@ -74,10 +72,8 @@ align-items: center;
 const Project = () => {
   return (
     <>
-    <DarkBackground />
-    <ResponsiveNavbar />
-    <ProjectSection>
-      <h2>My Portfolio</h2>
+    <ProjectSection id="project">
+      <h2>Tozo's Creation</h2>
       <ProjectCard>
         <img src="project-image-1.jpg" alt="Project 1" />
         <div className="project-info">
@@ -111,7 +107,6 @@ const Project = () => {
         </div>
       </ProjectCard>
     </ProjectSection>
-    <Footer />
     </>
   )
 }

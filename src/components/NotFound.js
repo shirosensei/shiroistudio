@@ -1,7 +1,7 @@
 import React from 'react'
 import { DarkBackground } from './DarkBackground';
 import Footer from './Footer';
-import ResponsiveNavbar from './ResponsiveNavbar';
+import ResponsiveNavbar from './Navbar';
 import styled from 'styled-components';
 import { RiErrorWarningLine } from 'react-icons/ri';
 

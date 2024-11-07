@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { SiHtml5, SiCss3, SiJavascript, SiMongodb, SiPostman, SiBootstrap, SiTailwindcss, SiGit, SiSass, SiPhp, SiReact } from 'react-icons/si';
 import { DarkBackground } from './DarkBackground';
 import Footer from './Footer';
-import ResponsiveNavbar from './ResponsiveNavbar';
+import ResponsiveNavbar from './Navbar';
 
 const AboutContainer = styled.div`
 display: flex;
@@ -14,6 +14,8 @@ height: 100vh;
 word-break: normal;
 padding: 1.5rem 1.5rem;
 margin: 1.5rem 0;
+background-color: var(--gunmetal);
+color: var(--anti-flash-white);
 
 @media screen and (max-width: 598px) {
   display: flex;
@@ -33,9 +35,9 @@ margin: 1.5rem 0;
 
 const AboutTitle = styled.h2`
   font-size: 24px;
-  color: #333;
   margin-bottom: 16px;
   text-align: center;
+  color: var(--mustard);
 
   @media only screen and (min-width: 320px) and (max-width: 498px) {
     /* Adjust input styles for the targeted screen sizes */
@@ -124,28 +126,15 @@ const AboutMe = () => {
   return (
     
     <>
-      {/* <ThemeProvider theme={theme}>
-        <LightTheme>
-       
-    
-        </LightTheme>
-        <DarkTheme>
-        
-        </DarkTheme>
-       
-        <DeepTheme>
-      <p>Welcome</p>
-        </DeepTheme>
-      </ThemeProvider> */}
-      {/* <Footer /> */}
-   <DarkBackground /> 
-    <ResponsiveNavbar />
-    <AboutContainer>
-      <AboutTitle>About Me</AboutTitle>
+  
+
+   
+    <AboutContainer id="about">
+      <AboutTitle>Meet Tozo</AboutTitle>
       <AboutDescription>
       As a full-stack software engineer, I'm fueled by my passion for helping and contributing to the tech world and start-up businesses. With a strong foundation in web development, I strive to create innovative solutions and seamless user experiences. I love tackling complex challenges and delivering high-quality results, from building scalable web applications to optimizing database performance. My goal is to shape the future of technology by turning innovative ideas into scalable solutions that have a meaningful impact. Let's join forces and build something amazing together!
        </AboutDescription>
-      <AboutTitle>My Skills</AboutTitle>
+      <AboutTitle>Tozo's Skills</AboutTitle>
       <SkillsContainer>
         <BouncingIcon>
           <SiHtml5 size={32} color="#E34F26" />
@@ -184,7 +173,7 @@ const AboutMe = () => {
         </BouncingIcon>
       </SkillsContainer>
     </AboutContainer>
-    <Footer />
+
    </>
   );
 };
