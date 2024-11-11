@@ -3,29 +3,41 @@ import styled from 'styled-components';
 import { Link } from 'react-scroll';
 import 'animate.css';
 
-const HomeContainer = styled.div`
+import image_400 from './assets/image-400.jpg';
+import image_600 from './assets/image-600.jpg';
+import image_800 from './assets/image-800.jpg';
+import image_1200 from './assets/image-1200.jpg';
+import image_1600 from './assets/image-1600.jpg';
+import image_1920 from './assets/image-1920.jpg';
+import image_2560 from './assets/image-2560.jpg';
+
+
+const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
 `;
 
-const HomeContent = styled.div`
-flex: 1;
+const Wrapper = styled.div`
+
   text-align: center;
 `;
 
-const HomeTitle = styled.h1`
+const Title = styled.h1`
   font-size: 32px;
     color: var(--anti-flash-white);
+    margin-bottom: 10px;
 
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
+  @media only screen and (min-width: 320px) and (max-width: 598px) {
     /* Adjust input styles for the targeted screen sizes */;
     font-weight: 400;
     font-size: 18px;
   }
   
-  @media only screen and (max-width: 769px) {
+  @media only screen and (min-width: 769px) {
     font-size: 20px;
   }
 `;
@@ -52,7 +64,7 @@ const HomeSubtitle = styled.p`
   }
 `;
 
-const HomeButton = styled.button`
+const Button = styled.button`
   padding: 12px 24px;
   font-size: 16px;
   color: var(--onyx);
@@ -86,24 +98,65 @@ const Span = styled.span`
 color: var(--mustard);
 `;
 
+const ImageCard = styled.div`
+margin-top: 2.5rem;
+width: 100%;
+max-width: 600px;
+margin: 0 auto;
+overflow: hidden;
+background-color: var(--space-cadet);
+z-index: -5;
+
+@media only screen and (min-width: 768px) {
+margin-top: 2.5rem;
+max-width: 600px;
+}
+`
+
 const Home = () => {
 
   return (
     <>
    
-    <HomeContainer>
-      <HomeContent>
-        <HomeTitle>Hi, I'm Tozo! <Span>A Software Engineer</Span></HomeTitle>
+    <Container>
+    <ImageCard>
+      <img src={image_1200}
+      srcSet={`
+        ${image_400} 400w, 
+        ${image_600} 600w,
+        ${image_800} 800w,
+        ${image_1200} 1200w,
+        ${image_1600} 1600w,
+        ${image_1920} 1920w,
+        ${image_2560} 2560w 
+        `}
+      sizes="
+      (max-width: 600px) 200px,
+      (max-width: 900) 300px,
+      (max-width: 1200px) 300px,
+      (max-width: 1600px) 600px,
+      (max-width: 1920px) 400px,   
+      (min-width: 1921px) 800px    
+      "
+      alt="Responsive Home Logo"
+      style={{ maxWidth: '100%', height: 'auto', mixBlendMode: 'inherit', opacity: '0.7' }}
+      // width={150}
+      />
+      </ImageCard>
+      
+      <Wrapper>
+     
+        <Title>Hi, I'm Tozo! <Span>A Software Engineer</Span></Title>
         <HomeSubtitle className="animate__animated animate__backInRight">Discover my impressive portfolio of projects that exhibit my expertise. 
         </HomeSubtitle>
         
-        <HomeButton>
+        <Button>
         <Link to="project" smooth={true} duration={300}>
           Get Started
           </Link>
-          </HomeButton>
-      </HomeContent>
-    </HomeContainer>
+          </Button>
+      </Wrapper>
+    </Container>
 
     </>
   );

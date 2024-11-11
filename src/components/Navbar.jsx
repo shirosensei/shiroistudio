@@ -60,15 +60,16 @@ const Hamburger = styled.div`
 const NavigationMenu = styled.nav`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none' )};
   position: absolute;
-  top: 60px;
+  top: 57px;
   right: 20px;
   background-color: var(--gunmetal);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 1.5rem 1.5rem;
+  padding: 1rem 1.5rem;
   width: 150px;
   text-align: left;
   transition: transform 0.3s ease-in-out;
+ 
 
   @media (min-width: 768px) {
   position: static;
@@ -77,6 +78,11 @@ const NavigationMenu = styled.nav`
   width: auto;
   background-color: transparent;
   padding: 0;
+  }
+
+  @media (min-width: 1920px) {
+  padding: 2rem 2rem;
+  font-size: 2rem;
   }
 `;
 
