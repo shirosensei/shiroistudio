@@ -60,12 +60,12 @@ const Hamburger = styled.div`
 const NavigationMenu = styled.nav`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none' )};
   position: absolute;
-  top: 65px;
+  top: 60px;
   right: 20px;
   background-color: var(--gunmetal);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 1.5rem;
   width: 150px;
   text-align: left;
   transition: transform 0.3s ease-in-out;
@@ -87,7 +87,7 @@ const NavigationMenu = styled.nav`
 const MenuLink = styled.li`
 
   list-style : none;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 
   a {
     text-decoration: none;
@@ -128,13 +128,6 @@ const Navbar = () => {
 {/* Todo Navigation Menu */}
       <NavigationMenu isOpen={isOpen}>
         <MenuLink>
-          <Link to="home" smooth={true} duration={300} onClick={toggleMenu}>
-          Home
-           </Link>
-       
-        </MenuLink>
-
-        <MenuLink>
           <Link to="about" smooth={true} duration={300} onClick={toggleMenu}>
           My Story
           </Link>
@@ -142,7 +135,7 @@ const Navbar = () => {
 
         <MenuLink>
           <Link to="project" smooth={true} duration={300} onClick={toggleMenu}>
-          Creations
+          My Creations
           </Link>
         </MenuLink>
         <MenuLink>

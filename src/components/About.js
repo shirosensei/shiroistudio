@@ -1,9 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { SiHtml5, SiCss3, SiJavascript, SiMongodb, SiPostman, SiBootstrap, SiTailwindcss, SiGit, SiSass, SiPhp, SiReact } from 'react-icons/si';
-import { DarkBackground } from './DarkBackground';
-import Footer from './Footer';
-import ResponsiveNavbar from './Navbar';
+
 
 const AboutContainer = styled.div`
 display: flex;

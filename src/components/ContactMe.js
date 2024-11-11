@@ -1,29 +1,10 @@
 import React, { useState } from "react";
-import styled, { ThemeProvider } from "styled-components";
-
+import styled from "styled-components";
 import { DarkBackground } from "./DarkBackground";
-import Footer from "./Footer";
-import ResponsiveNavbar from "./Navbar";
 
-const theme = {
-  colors: {
-    primary: "#ff0000",
-    secondary: "#ff9900",
-    tertiary: "#800080",
-    quaternary: "#a6c8e0",
-    quinary: "#a2d9ce",
-    senary: "#333333",
-    dark: "#000",
-    light: "#fff",
-    gray: "#f0f0f0",
-    pastel: "#a6c8e0",
-    lightGreen: "#a2d9ce",
-    black: "#000000",
-    navy: "#000080",
-    darkGray: "#333333",
-    offwhite: "#f2f2f2",
-  },
-};
+
+
+
 
 const ContactContainer = styled.div`
   display: flex;
@@ -32,6 +13,7 @@ const ContactContainer = styled.div`
   justify-content: center;
   height: 90vh;
   margin-bottom: 4rem;
+  background-color: var(--gunmetal);
 
   @media (max-width: 768px) {
     margin: 0;
@@ -57,6 +39,7 @@ const ContactText = styled.p`
   }
 `;
 
+
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -64,9 +47,7 @@ const FormContainer = styled.div`
   justify-content: center;
   width: 60%;
   height: 65%;
-  border: 2px solid ${(props) => props.theme.colors.offwhite};
   border-radius: 5px;
-  background-color: ${(props) => props.theme.colors.offwhite};
   overflow: hidden;
   padding: 20px;
 
@@ -82,6 +63,8 @@ const FormContainer = styled.div`
   }
 `;
 
+
+
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -91,9 +74,7 @@ const ContactForm = styled.form`
 const FormField = styled.input`
   padding: 8px;
   margin-bottom: 12px;
-  border: 2px solid ${(props) => props.theme.colors.pastel};
   border-radius: 5px;
-  color: ${(props) => props.theme.colors.darkGray};
   
  
   &:hover {
@@ -101,20 +82,17 @@ const FormField = styled.input`
   }
 
   &:focus{
-    border-color: ${(props) => props.theme.colors.offwhite};
   }
 
   @media (max-width: 768px) {
     width: 80%; 
-    border-color: ${(props) => props.theme.colors.light}
 
     &:focus {
-      border-color: ${(props) => props.theme.colors.pastel};
     }
   }
 
   @media only screen and (min-width: 320px) and (max-width: 498px) {
-    /* Adjust button styles for the targeted screen sizes */
+
     padding: 2px;
     font-size: 14px;
   }
@@ -124,23 +102,21 @@ const FormTextarea = styled.textarea`
   padding: 8px;
   margin-bottom: 12px;
   height: 120px;
-  border: 2px solid ${(props) => props.theme.colors.pastel};
    
   &:hover {
     box-shadow: 1px 2px 2px 1px rgba(0, 0, 255, .2);
   }
 
   &:focus{
-    border-color: ${(props) => props.theme.colors.offwhite};
   }
 
   @media (max-width: 768px) {
-    border-color: ${(props) => props.theme.colors.light}
 
     &:focus {
-      border-color: ${(props) => props.theme.colors.pastel};
     }
 `;
+
+
 
 const FormButton = styled.button`
   padding: 10px 20px;
@@ -192,15 +168,15 @@ const ContactMe = () => {
 
   return (
     <>
-      <ThemeProvider theme={theme} id="contact" className="section">
+
         <DarkBackground />
         
-        <ContactContainer>
-          <ContactTitle>Contact Me</ContactTitle>
+        <ContactContainer id="contact">
+          <ContactTitle>Let's Connect</ContactTitle>
           <ContactText>
-            Have a question or want to collaborate? Let's connect!
+            Have a question or want to collaborate? Let's have a chat!
           </ContactText>
-          <FormContainer action="../server">
+          <FormContainer>
             <ContactForm onSubmit={handleSubmit}>
               <FormField
                 type="text"
@@ -224,7 +200,7 @@ const ContactMe = () => {
           </FormContainer>
         </ContactContainer>
    
-      </ThemeProvider>
+
     </>
   );
 };

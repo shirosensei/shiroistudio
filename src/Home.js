@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 import 'animate.css';
 
 const HomeContainer = styled.div`
@@ -51,12 +52,13 @@ const HomeSubtitle = styled.p`
   }
 `;
 
-const HomeButton = styled.a`
+const HomeButton = styled.button`
   padding: 12px 24px;
   font-size: 16px;
   color: var(--onyx);
   background-color: var(--mustard);
-  outline: 1px solid var(--mustard);
+  border: 2px solid var(--mustard);
+  border-radius: 8px;
 
   border-radius: 4px;
   cursor: pointer;
@@ -94,7 +96,12 @@ const Home = () => {
         <HomeTitle>Hi, I'm Tozo! <Span>A Software Engineer</Span></HomeTitle>
         <HomeSubtitle className="animate__animated animate__backInRight">Discover my impressive portfolio of projects that exhibit my expertise. 
         </HomeSubtitle>
-        <HomeButton href="project">Get Started</HomeButton>
+        
+        <HomeButton>
+        <Link to="project" smooth={true} duration={300}>
+          Get Started
+          </Link>
+          </HomeButton>
       </HomeContent>
     </HomeContainer>
 
