@@ -103,12 +103,12 @@ const Project = () => {
               light modes and a subscription option, it's the perfect solution
               for those seeking daily motivation and seamless quote management.
             </p>
-            <a
+            <Link
               href="https://github.com/shirosensei/CRUD-APP.git"
               className="project-link"
             >
               View Project
-            </a>
+            </Link>
           </ProjectInfo>
         </ProjectCard>
 
