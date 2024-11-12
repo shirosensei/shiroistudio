@@ -19,12 +19,20 @@ const Container = styled.div`
   flex-direction: column;
   text-align: center;
   height: 100vh;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-right: 20px;
+  }
 `;
 
 const Wrapper = styled.div`
+text-align: center;
 
-  text-align: center;
+
 `;
+
+
 
 const Title = styled.h1`
   font-size: 32px;
@@ -110,6 +118,7 @@ z-index: -5;
 @media only screen and (min-width: 768px) {
 margin-top: 2.5rem;
 max-width: 600px;
+
 }
 `
 
@@ -133,10 +142,10 @@ const Home = () => {
       sizes="
       (max-width: 600px) 200px,
       (max-width: 900) 300px,
-      (max-width: 1200px) 300px,
-      (max-width: 1600px) 600px,
+      (max-width: 1200px) 400px,
+      (max-width: 1600px) 400px,
       (max-width: 1920px) 400px,   
-      (min-width: 1921px) 800px    
+      (min-width: 1921px) 400px    
       "
       alt="Responsive Home Logo"
       style={{ maxWidth: '100%', height: 'auto', mixBlendMode: 'inherit', opacity: '0.7' }}
