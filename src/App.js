@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { DarkBackground } from './components/DarkBackground';
 import Footer from './components/Footer';
-import ResponsiveNavbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import Home from './Home';
 import ScrollToTop from './components/ScrollToTop';
 import AboutMe from './components/About';
@@ -16,8 +16,7 @@ function App() {
     <>
     <Router>
 
-
-    <ResponsiveNavbar />
+    <Navbar />
     <Home />
     <AboutMe />
     <Project />

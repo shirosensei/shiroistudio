@@ -1,15 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import ImagePlaceholder from "./ImagePlaceholder";
 import placeholder from "../assets/placeholder.png";
+
+//! transient props anchor link to external site
+const Link = ({ className, text, ...props }) => (
+  <a {...props} className={className} target="_blank" rel="noopener noreferrer">
+    {text}
+  </a>
+);
 
 const ProjectSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  min-height: 90vh;
+  min-height: 100vh;
 
   h2 {
     font-size: 24px;
@@ -30,16 +36,9 @@ const ProjectCard = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+  margin: 20px 0;
 
-.project-info {
-  padding: 1.5rem 0;
-}
-
-  img {
-    width: 200px;
-    height: auto;
-    margin-right: 20px;
-  }
+  
 
     p {
       font-size: 14px;
@@ -47,19 +46,7 @@ align-items: center;
       line-height: 26px;
     }
 
-    .project-link {
-      display: inline-flex;
-      padding: 8px 16px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 14px;
-
-      &:hover {
-        background-color: #666;
-      }
-    }
+    
   }
 
   @media screen and (max-width: 768px) {
@@ -74,10 +61,39 @@ align-items: center;
 const ImageContainer = styled.div`
   position: relative;
   overflow: hidden;
-  width: 300px;
 `;
 
-const ProjectInfo = styled.div``;
+const ProjectInfo = styled.div`
+  display: inline-block;
+  text-align: center;
+`;
+
+const ProjectLinks = styled.div`
+  margin: 0 auto;
+  padding: 10px 0;
+  margin: 20px;
+`;
+
+//? Styled transient props anchor tag
+const StyledLink = styled(Link)`
+  color: ${(props) => (props.$primary ? "var(--gunmetal)" : "var(--mustard)")};
+  background-color: ${(props) =>
+    props.$primary ? "var(--mustard)" : "var(--onyx)"};
+  border: 2px solid
+    ${(props) =>
+      props.$primary ? "var(--mustard)" : "var(--anti-flash-white)"};
+  margin: 1em;
+  padding: 10px;
+  font-size: 1em;
+  text-decoration: none;
+
+  &:hover {
+    background-color: ${(props) =>
+      props.$primary ? "var(--gunmetal)" : "var(--mustard)"};
+    color: ${(props) =>
+      props.$primary ? "var(--anti-flash-white)" : "var(--onyx)"};
+  }
+`;
 
 const Project = () => {
   return (
@@ -103,12 +119,15 @@ const Project = () => {
               light modes and a subscription option, it's the perfect solution
               for those seeking daily motivation and seamless quote management.
             </p>
-            <Link
-              href="https://github.com/shirosensei/CRUD-APP.git"
-              className="project-link"
-            >
-              View Project
-            </Link>
+            <ProjectLinks>
+              <StyledLink
+                href="https://github.com/shirosensei/CRUD-APP.git"
+                text="Source Code"
+                $primary
+              />
+
+              <StyledLink href="https://duckduck.com" text="View Demo" />
+            </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
 
@@ -117,7 +136,7 @@ const Project = () => {
             <ImagePlaceholder
               src={placeholder}
               placeholderSrc={placeholder}
-              alt="URL- Shortener Microservice"
+              alt="URL Shortener Microservice"
             />
           </ImageContainer>
 
@@ -130,12 +149,15 @@ const Project = () => {
               Share your links seamlessly using our service, simplifying your
               online experience
             </p>
-            <a
-              href="https://github.com/shirosensei/URL-Shortener-Microservice.git"
-              className="project-link"
-            >
-              View Project
-            </a>
+            <ProjectLinks>
+              <StyledLink
+                href="https://github.com/shirosensei/URL-Shortener-Microservice.git"
+                text="Source Code"
+                $primary
+              />
+
+              <StyledLink href="https://duckduckgo.com" text="View Demo" />
+            </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
 
@@ -156,12 +178,15 @@ const Project = () => {
               standardized formats. It is a lightweight API that accepts various
               inputs and provides corresponding Unix and UTC formats.
             </p>
-            <a
-              href="https://github.com/shirosensei/Timestamp-Microservice.git"
-              className="project-link"
-            >
-              View Project
-            </a>
+            <ProjectLinks>
+              <StyledLink
+                href="https://github.com/shirosensei/Timestamp-Microservice.git"
+                text="Project Code"
+                $primary
+              />
+
+              <StyledLink href="https://duckduckgo.com" text="View Demo" />
+            </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
 
@@ -183,12 +208,15 @@ const Project = () => {
               activities in a MongoDB database and provides a user-friendly
               interface for managing and viewing their exercise history.
             </p>
-            <a
-              href="https://github.com/shirosensei/Timestamp-Microservice.git"
-              className="project-link"
-            >
-              View Project
-            </a>
+            <ProjectLinks>
+              <StyledLink
+                href="https://github.com/shirosensei/Timestamp-Microservice.git"
+                text="Source Code"
+                $primary
+              />
+
+              <StyledLink href="https://duckduck.com" text="View Demo" />
+            </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
       </ProjectSection>
