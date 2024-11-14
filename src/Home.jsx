@@ -106,19 +106,21 @@ const Span = styled.span`
 color: var(--mustard);
 `;
 
+
 const ImageCard = styled.div`
 margin-top: 2.5rem;
-width: 100%;
-max-width: 600px;
 margin: 0 auto;
 overflow: hidden;
 background-color: var(--space-cadet);
 z-index: -5;
 
+img {
+  width: 80%;
+}
+
 @media only screen and (min-width: 768px) {
 margin-top: 2.5rem;
 max-width: 600px;
-
 }
 `
 

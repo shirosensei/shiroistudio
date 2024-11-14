@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { SiTwitter, SiGithub, SiLinkedin  } from 'react-icons/si';
 
-const FooterContainer = styled.footer`
+const Container = styled.footer`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -65,8 +65,8 @@ margin: 0;
 
 const Footer = () => {
   return (
-    <FooterContainer>
-      <FooterText>© 2023 Tozo Sensei. All rights reserved.</FooterText>
+    <Container>
+      <FooterText>© 2024 Tozo Sensei. All rights reserved.</FooterText>
       <FooterIcon>
       <Anchor href="https://twitter.com">
         <SiTwitter />
@@ -78,7 +78,7 @@ const Footer = () => {
         <SiLinkedin  />
       </Anchor>
       </FooterIcon>
-    </FooterContainer>
+    </Container>
   );
 };
 

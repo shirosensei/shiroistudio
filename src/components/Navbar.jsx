@@ -7,12 +7,9 @@ const Header = styled.header`
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 1rem 2rem;
+padding: 0.7rem 2rem;
 background-color: var(--onyx);
 color: var(--anti-flash-white);
-
-
-
 `;
 
 const BrandLogo = styled.div`
@@ -65,9 +62,9 @@ const NavigationMenu = styled.nav`
   background-color: var(--gunmetal);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 1rem 1.5rem;
+  padding: 1.8rem 0;
   width: 150px;
-  text-align: left;
+  text-align: center;
   transition: transform 0.3s ease-in-out;
  
 
@@ -78,6 +75,7 @@ const NavigationMenu = styled.nav`
   width: auto;
   background-color: transparent;
   padding: 0;
+  text-align: right;
   }
 
   @media (min-width: 1920px) {
@@ -86,30 +84,26 @@ const NavigationMenu = styled.nav`
   }
 `;
 
-
-
-
-
 const MenuLink = styled.li`
-
   list-style : none;
-  margin: 1rem 0;
-
-  a {
-    text-decoration: none;
-    &:hover {
-    color: var(--mustard);
-    cursor: pointer;
-      text-decoration: none;
-    }
-  }
 
   @media (min-width: 768px) {
     margin: 0 1rem;
   }
 `;
 
+const NavigationLink = styled(Link)`
+display: block;
+  color: var(--anti-flash-white);
+  cursor: pointer;
+  padding: 7px 2px;
 
+
+  &:hover {
+    background-color: var(--mustard);
+    color: var(--anti-flash-white);
+  }
+`
 
 
 const Navbar = () => {
@@ -134,20 +128,20 @@ const Navbar = () => {
 {/* Todo Navigation Menu */}
       <NavigationMenu isOpen={isOpen}>
         <MenuLink>
-          <Link to="about" smooth={true} duration={300} onClick={toggleMenu}>
+          <NavigationLink to="about" smooth={true} duration={300} onClick={toggleMenu}>
           My Story
-          </Link>
+          </NavigationLink>
         </MenuLink>
 
         <MenuLink>
-          <Link to="project" smooth={true} duration={300} onClick={toggleMenu}>
+          <NavigationLink to="project" smooth={true} duration={300} onClick={toggleMenu}>
           My Creations
-          </Link>
+          </NavigationLink>
         </MenuLink>
         <MenuLink>
-          <Link to="contact" smooth={true} duration={300} onClick={toggleMenu}>
+          <NavigationLink to="contact" smooth={true} duration={300} onClick={toggleMenu}>
           Collaborate
-          </Link>
+          </NavigationLink>
         </MenuLink>
 
     </NavigationMenu>    

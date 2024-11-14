@@ -6,133 +6,91 @@ import { DarkBackground } from "./DarkBackground";
 
 
 
-const ContactContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 90vh;
-  margin-bottom: 4rem;
+  padding: 2rem;
   background-color: var(--gunmetal);
-
-  @media (max-width: 768px) {
-    margin: 0;
-    padding: 0;
-  }
-  @media (min-width: 992px) {
-    padding: 5rem;
-  }
+  margin: 0 auto;  
 `;
 
-const ContactTitle = styled.h2`
-  font-size: 24px;
+const Wrapper = styled.div`
+display: block;
+ max-width: 600px;
+    background-color: var(--anti-flash-white);
+  border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+    @media (min-width: 768px) {
+     min-width: 600px;
+    }
+`
+
+const Title = styled.h2`
   text-align: center;
+  margin-bottom: 1rem;
+  color: var(--onyx);
 `;
 
-const ContactText = styled.p`
-  font-size: 16px;
+const Text = styled.p`
+  font-size: 14px;
   text-align: center;
-
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
-    /* Adjust input styles for the targeted screen sizes */
-    font-size: 14px;
-  }
+  word-break: break-word;
+   overflow-wrap: break-word;
+  color: var(--onyx);  
+  padding: 1rem 5px;
 `;
 
 
-const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
-  height: 65%;
+const ContactForm = styled.div`
   border-radius: 5px;
-  overflow: hidden;
+  margin: 1rem;
   padding: 20px;
-
-  @media (max-width: 768px) {
-    width: 60%;
-    height: 50%;
-    padding: 1.5rem;
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
-    margin: 1.5rem 0;
-    padding: 4rem 0.75rem;
-  }
 `;
 
 
 
-const ContactForm = styled.form`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 100%;
 `;
 
 const FormField = styled.input`
-  padding: 8px;
-  margin-bottom: 12px;
-  border-radius: 5px;
-  
- 
-  &:hover {
-    box-shadow: 1px 2px 2px 1px rgba(0, 0, 255, .2);
-  }
-
-  &:focus{
-  }
-
-  @media (max-width: 768px) {
-    width: 80%; 
-
-    &:focus {
-    }
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
-
-    padding: 2px;
-    font-size: 14px;
-  }
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+    border: 1px solid var(--onyx);
+    font-size: 1rem; 
 `;
 
 const FormTextarea = styled.textarea`
-  padding: 8px;
-  margin-bottom: 12px;
-  height: 120px;
-   
-  &:hover {
-    box-shadow: 1px 2px 2px 1px rgba(0, 0, 255, .2);
-  }
-
-  &:focus{
-  }
-
-  @media (max-width: 768px) {
-
-    &:focus {
-    }
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--onyx);
+  border-radius: 4px;
+  font-size: 1rem;
+  min-height: 100px; 
 `;
 
 
 
 const FormButton = styled.button`
-  padding: 10px 20px;
-  margin-top: 12px;
-  background-color: #333;
-  color: #fff;
+  padding: 0.75rem;
+  background-color: var(--onyx);
+  color: var(--anti-flash-white);
   border: none;
   cursor: pointer;
-  border-radius: 3.3px;
-  width: 50%;
+  border-radius: 4px;
+  font-size: 1rem;
 
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
-    padding: 8px 16px;
-    font-size: 14px;
-    text-align: center;
+  &:hover {
+      background-color: var(--mustard);
   }
+
+
 `;
 
 const ContactMe = () => {
@@ -169,15 +127,17 @@ const ContactMe = () => {
   return (
     <>
 
-        <DarkBackground />
-        
-        <ContactContainer id="contact">
-          <ContactTitle>Let's Connect</ContactTitle>
-          <ContactText>
+      <DarkBackground />
+
+      <Container id="contact">
+        <Wrapper>
+
+          <Title>Let's Connect</Title>
+          <Text>
             Have a question or want to collaborate? Let's have a chat!
-          </ContactText>
-          <FormContainer>
-            <ContactForm onSubmit={handleSubmit}>
+          </Text>
+          <ContactForm>
+            <Form onSubmit={handleSubmit}>
               <FormField
                 type="text"
                 value={name}
@@ -196,10 +156,12 @@ const ContactMe = () => {
                 placeholder="Message"
               ></FormTextarea>
               <FormButton type="submit">Submit</FormButton>
-            </ContactForm>
-          </FormContainer>
-        </ContactContainer>
-   
+            </Form>
+          </ContactForm>
+
+        </Wrapper>
+      </Container>
+
 
     </>
   );

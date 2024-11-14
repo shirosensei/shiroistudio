@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { SiHtml5, SiCss3, SiJavascript, SiMongodb, SiPostman, SiBootstrap, SiTailwindcss, SiGit, SiSass, SiPhp, SiReact } from 'react-icons/si';
-
+import image_400 from '../assets/image-400.jpg';
+import image_600 from '../assets/image-600.jpg';
+import image_800 from '../assets/image-800.jpg';
 
 const AboutContainer = styled.div`
 display: flex;
@@ -70,8 +72,19 @@ const SkillsContainer = styled.div`
   @media (max-width: 598px) {
     margin-bottom: 4.5rem;
   }
-
 `;
+
+const ImageCard = styled.div`
+margin-top: 2.5rem;
+margin: 0 auto;
+
+@media only screen and (min-width: 768px) {
+margin-top: 2.5rem;
+max-width: 600px;
+
+}
+`
+
 
 // Define the bounce animation
 const bounceAnimation = keyframes`
@@ -128,6 +141,28 @@ const AboutMe = () => {
 
    
     <AboutContainer id="about">
+    <ImageCard>
+      <img src={image_400}
+      srcSet={`
+        ${image_400} 400w, 
+        ${image_600} 600w,
+        ${image_800} 800w,
+        ${image_800} 1200w,
+        `}
+      sizes="
+      (max-width: 600px) 200px,
+      (max-width: 900) 200px,
+      (max-width: 1200px) 200px,
+      (max-width: 1600px) 200px,
+      (max-width: 1920px) 200px,   
+      (min-width: 1921px) 200px    
+      "
+      alt="Responsive Tozo's Logo"
+      style={{ maxWidth: '100%', height: 'auto', mixBlendMode: 'inherit', opacity: '0.7' }}
+      // width={150}
+      />
+      </ImageCard>
+
       <AboutTitle>Meet Tozo</AboutTitle>
       <AboutDescription>
       As a full-stack software engineer, I'm fueled by my passion for helping and contributing to the tech world and start-up businesses. With a strong foundation in web development, I strive to create innovative solutions and seamless user experiences. I love tackling complex challenges and delivering high-quality results, from building scalable web applications to optimizing database performance. My goal is to shape the future of technology by turning innovative ideas into scalable solutions that have a meaningful impact. Let's join forces and build something amazing together!
