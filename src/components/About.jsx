@@ -68,9 +68,12 @@ const SkillsContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 5rem;
 
-  @media (max-width: 598px) {
-    margin-bottom: 4.5rem;
+  @media (min-width: 768px) {
+    margin-bottom: 5.5rem;
+    padding-bottom: 25rem; 
+    overflow: hidden;
   }
 `;
 
@@ -79,8 +82,9 @@ margin-top: 2.5rem;
 margin: 0 auto;
 
 @media only screen and (min-width: 768px) {
-margin-top: 2.5rem;
+margin-top: 15.5rem;
 max-width: 600px;
+padding-top: 1.5rem;
 
 }
 `

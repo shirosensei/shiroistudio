@@ -181,7 +181,7 @@ const Project = () => {
             <ProjectLinks>
               <StyledLink
                 href="https://github.com/shirosensei/Timestamp-Microservice.git"
-                text="Project Code"
+                text="Source Code"
                 $primary
               />
 
