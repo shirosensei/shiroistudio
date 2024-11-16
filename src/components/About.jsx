@@ -7,22 +7,21 @@ import image_800 from '../assets/image-800.jpg';
 
 const AboutContainer = styled.div`
 display: flex;
+flex-wrap: wrap;
 flex-direction: column;
 align-items: center;
-justify-content: center;
-height: 100vh;
+justify-content: space-between;
 word-break: normal;
-padding: 1.5rem 1.5rem;
+padding: 2rem;
 margin: 1.5rem 0;
 background-color: var(--gunmetal);
-color: var(--anti-flash-white);
 
-@media screen and (max-width: 598px) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+@media screen and (min-width: 768px) {
+  flex-direction: column;
   margin-top: 2rem;
-  padding-top: 10.5rem;
+  padding-top: 2.5rem;
+  gap: 1rem;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 498px) {
@@ -47,6 +46,8 @@ const AboutTitle = styled.h2`
 `;
 
 const AboutDescription = styled.p`
+
+  flex: 2;
   font-size: 18px;
   color: #fff;
   margin-bottom: 24px;
@@ -65,27 +66,30 @@ const AboutDescription = styled.p`
 
 const SkillsContainer = styled.div`
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 5rem;
 
   @media (min-width: 768px) {
-    margin-bottom: 5.5rem;
-    padding-bottom: 25rem; 
-    overflow: hidden;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem; 
   }
 `;
 
 const ImageCard = styled.div`
-margin-top: 2.5rem;
-margin: 0 auto;
+margin-top: 1.5rem;
 
-@media only screen and (min-width: 768px) {
-margin-top: 15.5rem;
-max-width: 600px;
+
+@media (min-width: 768px) {
+margin-top: 1.5rem;
+max-width: 80%;
 padding-top: 1.5rem;
 
+img {
+  width: 80%;
+  }
 }
 `
 

@@ -44,12 +44,13 @@ export const DarkBackground = createGlobalStyle`
       --black: #000000;
       --navy: #000080;
       --dark-gray: #333333;
+      --accent-color: #FF9900;
 
   /* Global styles */
   
   body {
     background-color: var(--space-cadet);
-    color: var(--mustard);
+    color: var(--accent-color);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
