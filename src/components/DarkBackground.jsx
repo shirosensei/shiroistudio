@@ -27,24 +27,12 @@ export const DarkBackground = createGlobalStyle`
     --anti-flash-white: #EEEEEE;
     --mustard: #FFD369;
 
-
-    /* Bold and Vibrant */
-
-    --red: #ff0000;
-    --orange: #ff9900;
-    --purple: #800080;
-
-      /* Serene and Calming: */
-
-      --pastel-blue: #a6c8e0;
-      --light-green: #a2d9ce;
      
       /* Dark and Dramatic */
 
       --black: #000000;
       --navy: #000080;
       --dark-gray: #333333;
-      --accent-color: #FF9900;
 
   /* Global styles */
   

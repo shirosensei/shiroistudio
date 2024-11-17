@@ -18,7 +18,7 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -28,7 +28,6 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
 text-align: center;
-
 
 `;
 
@@ -76,8 +75,9 @@ const Button = styled.button`
   padding: 12px 24px;
   font-size: 16px;
   color: var(--onyx);
-  background-color: var(--mustard);
-  border: 2px solid var(--mustard);
+  font-weight: 600;
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
   border-radius: 8px;
 
   border-radius: 4px;
@@ -96,14 +96,14 @@ const Button = styled.button`
   }
 
   &:hover {
-    background-color: var(--mustard);
+    background-color: var(--accent-color);
     color: var(--onyx);
   }
 `;
 
 
 const Span = styled.span`
-color: var(--mustard);
+color: var(--accent-color);
 `;
 
 

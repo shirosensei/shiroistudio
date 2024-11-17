@@ -26,7 +26,7 @@ const Hamburger = styled.div`
   span {
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: var(--anti-flash-white);
     margin: 4px 0;
     transition: transform 0.3s ease;
   }
@@ -100,7 +100,7 @@ display: block;
 
 
   &:hover {
-    background-color: var(--mustard);
+    background-color: var(--accent-color);
     color: var(--anti-flash-white);
   }
 `

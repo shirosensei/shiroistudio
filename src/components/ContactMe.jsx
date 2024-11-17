@@ -87,7 +87,8 @@ const FormButton = styled.button`
   font-size: 1rem;
 
   &:hover {
-      background-color: var(--mustard);
+      background-color: var(--accent-color);
+      color: var(--onyx);
   }
 
 

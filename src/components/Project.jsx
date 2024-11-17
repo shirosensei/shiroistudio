@@ -66,6 +66,15 @@ const ImageContainer = styled.div`
 const ProjectInfo = styled.div`
   display: inline-block;
   text-align: center;
+
+  h3 { 
+      color: var(--white);
+       fontWeight: '600';
+    }
+
+  p { 
+
+   }
 `;
 
 const ProjectLinks = styled.div`
@@ -76,12 +85,12 @@ const ProjectLinks = styled.div`
 
 //? Styled transient props anchor tag
 const StyledLink = styled(Link)`
-  color: ${(props) => (props.$primary ? "var(--gunmetal)" : "var(--mustard)")};
+  color: ${(props) => (props.$primary ? "var(--gunmetal)" : "var(--accent-color)")};
   background-color: ${(props) =>
-    props.$primary ? "var(--mustard)" : "var(--onyx)"};
+    props.$primary ? "var(--accent-color)" : "var(--onyx)"};
   border: 2px solid
     ${(props) =>
-      props.$primary ? "var(--mustard)" : "var(--anti-flash-white)"};
+      props.$primary ? "var(--accent-color)" : "var(--anti-flash-white)"};
   margin: 1em;
   padding: 10px;
   font-size: 1em;
@@ -89,7 +98,7 @@ const StyledLink = styled(Link)`
 
   &:hover {
     background-color: ${(props) =>
-      props.$primary ? "var(--gunmetal)" : "var(--mustard)"};
+      props.$primary ? "var(--gunmetal)" : "var(--accent-color)"};
     color: ${(props) =>
       props.$primary ? "var(--anti-flash-white)" : "var(--onyx)"};
   }
