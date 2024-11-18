@@ -124,14 +124,12 @@ const Project = () => {
               The Quote API Web App Generator is a powerful tool for generating,
               storing, and managing quotes. It fetches a daily "Quote of the
               Day" from an API and offers features like quote generation,
-              storage in a MongoDB database, and easy management. With dark and
-              light modes and a subscription option, it's the perfect solution
-              for those seeking daily motivation and seamless quote management.
+              storage in a MongoDB database, and easy management. 
             </p>
             <ProjectLinks>
               <StyledLink
-                href="https://github.com/shirosensei/CRUD-APP.git"
-                text="Source Code"
+                href="https://github.com/shirosensei/Quote-Generator-.git"
+                text="Github Repo"
                 $primary
               />
 
@@ -145,23 +143,20 @@ const Project = () => {
             <ImagePlaceholder
               src={placeholder}
               placeholderSrc={placeholder}
-              alt="URL Shortener Microservice"
+              alt="CurrencXchange"
             />
           </ImageContainer>
 
           <ProjectInfo>
-            <h3>URL Shortener Microservice</h3>
+            <h3>CurrencyXchange
+            </h3>
             <p>
-              URL Shortener Microservice simplifies long URLs, making them
-              concise and user-friendly. Say goodbye to complex web addresses
-              and effortlessly generate shortened links with a single click.
-              Share your links seamlessly using our service, simplifying your
-              online experience
+            CurrencyXchange is a web application that allows users to compare real-time exchange rates, manage their currency portfolios, and perform currency conversions.
             </p>
             <ProjectLinks>
               <StyledLink
-                href="https://github.com/shirosensei/URL-Shortener-Microservice.git"
-                text="Source Code"
+                href="https://github.com/shirosensei/CurrencyXchange.git"
+                text="Github Repo"
                 $primary
               />
 
@@ -175,22 +170,19 @@ const Project = () => {
             <ImagePlaceholder
               src={placeholder}
               placeholderSrc={placeholder}
-              alt="Timestamp Microservice"
+              alt="Github Repo"
             />
           </ImageContainer>
 
           <ProjectInfo>
-            <h3>Timestamp Microservice</h3>
+            <h3>HairHarmony</h3>
             <p>
-              The Timestamp Microservice simplifies date and time conversions by
-              converting Unix timestamps and natural language dates into
-              standardized formats. It is a lightweight API that accepts various
-              inputs and provides corresponding Unix and UTC formats.
+            This project is a comprehensive hair salon booking website where customers can book sessions for various hair services. 
             </p>
             <ProjectLinks>
               <StyledLink
-                href="https://github.com/shirosensei/Timestamp-Microservice.git"
-                text="Source Code"
+                href="https://github.com/shirosensei/hairHarmony.git"
+                text="Github Repo"
                 $primary
               />
 
@@ -213,14 +205,12 @@ const Project = () => {
             <p>
               {" "}
               Exercise Tracker application built with HTML, CSS, JavaScript, and
-              MongoDB. The application allows users to store their exercise
-              activities in a MongoDB database and provides a user-friendly
-              interface for managing and viewing their exercise history.
+              MongoDB.
             </p>
             <ProjectLinks>
               <StyledLink
                 href="https://github.com/shirosensei/Timestamp-Microservice.git"
-                text="Source Code"
+                text="Github Repo"
                 $primary
               />
 

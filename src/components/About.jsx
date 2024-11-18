@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import {
-  SiJsonwebtokens,
   SiMysql,
   SiNginx,
   SiDocker,
@@ -266,10 +265,7 @@ const AboutMe = () => {
             <SiFirebase size={32} color="#FFCA28" />
           </BouncingIcon>
 
-          {/* <BouncingIcon name="jwt">
-            <SiJsonwebtokens size={32} color="#872EC6" />
-          </BouncingIcon> */}
-
+  
           <BouncingIcon name="PHP">
             <SiPhp size={32} />
           </BouncingIcon>

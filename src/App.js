@@ -1,6 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { DarkBackground } from './components/DarkBackground';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Home from './Home';
@@ -14,8 +12,6 @@ import Project from './components/Project';
 function App() {
   return (
     <>
-    <Router>
-
     <Navbar />
     <Home />
     <AboutMe />
@@ -23,7 +19,6 @@ function App() {
     <ContactMe />
     <ScrollToTop />
     <Footer />
-    </Router>
     </>
 
   );
