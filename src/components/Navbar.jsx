@@ -10,6 +10,10 @@ align-items: center;
 padding: 0.7rem 2rem;
 background-color: var(--onyx);
 color: var(--anti-flash-white);
+
+@media (min-width: 1000px) {
+  padding: 1.5rem 2rem;
+}
 `;
 
 const BrandLogo = styled.div`
@@ -65,8 +69,7 @@ const NavigationMenu = styled.nav`
   padding: 1.8rem 0;
   width: 150px;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
- 
+
 
   @media (min-width: 768px) {
   position: static;
@@ -97,11 +100,22 @@ display: block;
   color: var(--anti-flash-white);
   cursor: pointer;
   padding: 7px 2px;
+  transition: border-bottom 0.2s ease-in-out;
+
+
 
 
   &:hover {
-    background-color: var(--accent-color);
-    color: var(--anti-flash-white);
+  color: var(--accent-color);
+  border-bottom: 2px solid;
+
+  }
+
+  @media (max-width: 768px) {
+    &:hover {
+      background-color: var(--accent-color);
+      color: var(--anti-flash-white);
+    }
   }
 `
 
