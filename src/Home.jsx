@@ -10,6 +10,7 @@ import image_1200 from './assets/image-1200.jpg';
 import image_1600 from './assets/image-1600.jpg';
 import image_1920 from './assets/image-1920.jpg';
 import image_2560 from './assets/image-2560.jpg';
+import home from './assets/home.jpg';
 
 
 const Container = styled.div`
@@ -131,26 +132,26 @@ const Home = () => {
    
     <Container>
     <ImageCard>
-      <img src={image_1200}
+      <img src={home}
       srcSet={`
-        ${image_400} 400w, 
-        ${image_600} 600w,
-        ${image_800} 800w,
-        ${image_1200} 1200w,
-        ${image_1600} 1600w,
-        ${image_1920} 1920w,
-        ${image_2560} 2560w 
+        ${home} 400w, 
+        ${home} 600w,
+        ${home} 800w,
+        ${home} 1200w,
+        ${home} 1600w,
+        ${home} 1920w,
+        ${home} 2560w 
         `}
       sizes="
-      (max-width: 600px) 200px,
-      (max-width: 900) 300px,
-      (max-width: 1200px) 400px,
+      (max-width: 640px) 700px,
+      (max-width: 900) 800px,
+      (max-width: 1200px) 800px,
       (max-width: 1600px) 400px,
       (max-width: 1920px) 400px,   
       (min-width: 1921px) 400px    
       "
       alt="Responsive Home Logo"
-      style={{ maxWidth: '100%', height: 'auto', mixBlendMode: 'inherit', opacity: '0.7' }}
+      style={{ maxWidth: '100%', height: 'auto', mixBlendMode: 'inherit', opacity: '0.7', borderRadius: '50%' }}
       // width={150}
       />
       </ImageCard>

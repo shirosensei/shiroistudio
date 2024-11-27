@@ -19,9 +19,7 @@ import {
   SiReact,
   SiNodedotjs,
 } from "react-icons/si";
-import image_400 from "../assets/image-400.jpg";
-import image_600 from "../assets/image-600.jpg";
-import image_800 from "../assets/image-800.jpg";
+
 
 const AboutContainer = styled.div`
   display: flex;
@@ -159,33 +157,7 @@ const AboutMe = () => {
   return (
     <>
       <AboutContainer id="about">
-        <ImageCard>
-          <img
-            src={image_400}
-            srcSet={`
-        ${image_400} 400w, 
-        ${image_600} 600w,
-        ${image_800} 800w,
-        ${image_800} 1200w,
-        `}
-            sizes="
-      (max-width: 600px) 200px,
-      (max-width: 900) 200px,
-      (max-width: 1200px) 200px,
-      (max-width: 1600px) 200px,
-      (max-width: 1920px) 200px,   
-      (min-width: 1921px) 200px    
-      "
-            alt="Responsive Tozo's Logo"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              mixBlendMode: "inherit",
-              opacity: "0.7",
-            }}
-            // width={150}
-          />
-        </ImageCard>
+ 
 
         <AboutTitle>Meet Tozo</AboutTitle>
         <AboutDescription>
