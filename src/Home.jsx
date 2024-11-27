@@ -3,13 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-scroll';
 import 'animate.css';
 
-import image_400 from './assets/image-400.jpg';
-import image_600 from './assets/image-600.jpg';
-import image_800 from './assets/image-800.jpg';
-import image_1200 from './assets/image-1200.jpg';
-import image_1600 from './assets/image-1600.jpg';
-import image_1920 from './assets/image-1920.jpg';
-import image_2560 from './assets/image-2560.jpg';
+
 import home from './assets/home.jpg';
 
 
@@ -134,21 +128,12 @@ const Home = () => {
     <ImageCard>
       <img src={home}
       srcSet={`
-        ${home} 400w, 
         ${home} 600w,
-        ${home} 800w,
         ${home} 1200w,
-        ${home} 1600w,
-        ${home} 1920w,
-        ${home} 2560w 
         `}
       sizes="
-      (max-width: 640px) 700px,
-      (max-width: 900) 800px,
-      (max-width: 1200px) 800px,
-      (max-width: 1600px) 400px,
-      (max-width: 1920px) 400px,   
-      (min-width: 1921px) 400px    
+      (max-width: 600px) 560px,
+      (max-width: 1200px) 50vw, 33vw,
       "
       alt="Responsive Home Logo"
       style={{ maxWidth: '100%', height: 'auto', mixBlendMode: 'inherit', opacity: '0.7', borderRadius: '50%' }}
