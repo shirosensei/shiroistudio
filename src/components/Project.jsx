@@ -133,7 +133,7 @@ const Project = () => {
                 $primary
               />
 
-              <StyledLink href="https://duckduck.com" text="View Demo" />
+              <StyledLink href="https://duckduck.com" text="Live Demo" />
             </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
@@ -160,7 +160,7 @@ const Project = () => {
                 $primary
               />
 
-              <StyledLink href="https://duckduckgo.com" text="View Demo" />
+              <StyledLink href="https://duckduckgo.com" text="Live Demo" />
             </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
@@ -186,7 +186,7 @@ const Project = () => {
                 $primary
               />
 
-              <StyledLink href="https://duckduckgo.com" text="View Demo" />
+              <StyledLink href="https://duckduckgo.com" text="Live Demo" />
             </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
@@ -214,7 +214,7 @@ const Project = () => {
                 $primary
               />
 
-              <StyledLink href="https://duckduck.com" text="View Demo" />
+              <StyledLink href="https://duckduck.com" text="Live Demo" />
             </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
