@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-scroll';
-
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Link } from "react-scroll";
 
 const Header = styled.header`
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0.9rem 2rem;
-background-color: var(--onyx);
-color: var(--anti-flash-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  background-color: var(--onyx);
+  color: var(--anti-flash-white);
 
-@media (min-width: 1000px) {
-  padding: 1.5rem 2rem;
-}
+  @media (min-width: 1000px) {
+    padding: 1.5rem 2rem;
+  }
 `;
 
 const BrandLogo = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
 `;
-
 
 const Hamburger = styled.div`
   display: flex;
@@ -35,11 +33,9 @@ const Hamburger = styled.div`
     transition: transform 0.3s ease;
   }
 
- 
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     display: none;
   }
-
 
   ${({ isOpen }) =>
     isOpen &&
@@ -59,7 +55,7 @@ const Hamburger = styled.div`
 `;
 
 const NavigationMenu = styled.nav`
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none' )};
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: absolute;
   top: 57px;
   right: 20px;
@@ -70,25 +66,24 @@ const NavigationMenu = styled.nav`
   width: 150px;
   text-align: center;
 
-
   @media (min-width: 768px) {
-  position: static;
-  display: flex;
-  align-items: center;
-  width: auto;
-  background-color: transparent;
-  padding: 0;
-  text-align: right;
+    position: static;
+    display: flex;
+    align-items: center;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    text-align: right;
   }
 
   @media (min-width: 1920px) {
-  padding: 2rem 2rem;
-  font-size: 2rem;
+    padding: 2rem 2rem;
+    font-size: 2rem;
   }
 `;
 
 const MenuLink = styled.li`
-  list-style : none;
+  list-style: none;
 
   @media (min-width: 768px) {
     margin: 0 1rem;
@@ -96,18 +91,15 @@ const MenuLink = styled.li`
 `;
 
 const NavigationLink = styled(Link)`
-display: block;
+  display: block;
   color: var(--anti-flash-white);
   cursor: pointer;
   padding: 7px 2px;
   transition: border-bottom 0.2s ease-in-out;
 
-
-
-
   &:hover {
-  color: var(--accent-color);
-  border-bottom: 2px solid;
+    color: var(--accent-color);
+    border-bottom: 2px solid;
   }
 
   @media (max-width: 768px) {
@@ -117,8 +109,7 @@ display: block;
       opacity: 0.5;
     }
   }
-`
-
+`;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -129,7 +120,6 @@ const Navbar = () => {
 
   return (
     <Header>
-      
       <BrandLogo>Tozo</BrandLogo>
 
       <Hamburger isOpen={isOpen} onClick={toggleMenu}>
@@ -138,27 +128,40 @@ const Navbar = () => {
         <span></span>
       </Hamburger>
 
-
-{/* Todo Navigation Menu */}
+      {/* Todo Navigation Menu */}
       <NavigationMenu isOpen={isOpen}>
         <MenuLink>
-          <NavigationLink to="about" smooth={true} duration={300} onClick={toggleMenu}>
-          My Story
+          <NavigationLink
+            to="about"
+            smooth={true}
+            duration={300}
+            onClick={toggleMenu}
+          >
+            My Story
           </NavigationLink>
         </MenuLink>
 
         <MenuLink>
-          <NavigationLink to="project" smooth={true} duration={300} onClick={toggleMenu}>
-          My Creations
+          <NavigationLink
+            to="project"
+            smooth={true}
+            duration={300}
+            onClick={toggleMenu}
+          >
+            My Creations
           </NavigationLink>
         </MenuLink>
         <MenuLink>
-          <NavigationLink to="contact" smooth={true} duration={300} onClick={toggleMenu}>
-          Collaborate
+          <NavigationLink
+            to="contact"
+            smooth={true}
+            duration={300}
+            onClick={toggleMenu}
+          >
+            Collaborate
           </NavigationLink>
         </MenuLink>
-
-    </NavigationMenu>    
+      </NavigationMenu>
     </Header>
   );
 };

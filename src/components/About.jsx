@@ -91,19 +91,19 @@ const SkillsContainer = styled.div`
   }
 `;
 
-const ImageCard = styled.div`
-  margin-top: 1.5rem;
+// const ImageCard = styled.div`
+//   margin-top: 1.5rem;
 
-  @media (min-width: 768px) {
-    margin-top: 1.5rem;
-    max-width: 80%;
-    padding-top: 1.5rem;
+//   @media (min-width: 768px) {
+//     margin-top: 1.5rem;
+//     max-width: 80%;
+//     padding-top: 1.5rem;
 
-    img {
-      width: 80%;
-    }
-  }
-`;
+//     img {
+//       width: 80%;
+//     }
+//   }
+// `;
 
 // Define the bounce animation
 const bounceAnimation = keyframes`

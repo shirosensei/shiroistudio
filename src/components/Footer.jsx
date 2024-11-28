@@ -68,13 +68,13 @@ const Footer = () => {
     <Container>
       <FooterText>© 2024 Tozo Sensei. All rights reserved.</FooterText>
       <FooterIcon>
-      <Anchor href="https://twitter.com">
+      <Anchor href="https://twitter.com/shiroi_sensei">
         <SiTwitter />
       </Anchor>
-      <Anchor href="https://github.com">
+      <Anchor href="https://github.com/shirosensei">
         <SiGithub />
       </Anchor>
-      <Anchor href="https://linkedin.com">
+      <Anchor href="https://linkedin.com/in/codersensei">
         <SiLinkedin  />
       </Anchor>
       </FooterIcon>
