@@ -7,7 +7,7 @@ const Header = styled.header`
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 0.7rem 2rem;
+padding: 0.9rem 2rem;
 background-color: var(--onyx);
 color: var(--anti-flash-white);
 
@@ -108,13 +108,13 @@ display: block;
   &:hover {
   color: var(--accent-color);
   border-bottom: 2px solid;
-
   }
 
   @media (max-width: 768px) {
     &:hover {
       background-color: var(--accent-color);
       color: var(--anti-flash-white);
+      opacity: 0.5;
     }
   }
 `
