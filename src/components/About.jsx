@@ -3,10 +3,9 @@ import styled, { keyframes } from "styled-components";
 import {
   SiMysql,
   SiNginx,
-  SiDocker,
+  // SiDocker,
   SiTypescript,
-  SiExpress,
-  SiFirebase,
+  // SiExpress,
   SiHtml5,
   SiCss3,
   SiJavascript,
@@ -88,8 +87,6 @@ const SkillsContainer = styled.div`
   @media (min-width: 768px) {
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
-  }
-`;
 
 // const ImageCard = styled.div`
 //   margin-top: 1.5rem;
@@ -217,25 +214,22 @@ const AboutMe = () => {
             <SiNodedotjs size={32} color="#008000" />
           </BouncingIcon>
 
-          <BouncingIcon name="express">
+          {/* <BouncingIcon name="express">
             <SiExpress size={32} color="#000" />
-          </BouncingIcon>
+          </BouncingIcon> */}
 
           <BouncingIcon name="Nginx">
             <SiNginx size={32} color="#009639" />
           </BouncingIcon>
 
-          <BouncingIcon name="docker">
+          {/* <BouncingIcon name="docker">
             <SiDocker size={32} color="#2496ED" />
-          </BouncingIcon>
+          </BouncingIcon> */}
 
           <BouncingIcon name="Git">
             <SiGit size={32} name="git" />
           </BouncingIcon>
 
-          <BouncingIcon name="firebase">
-            <SiFirebase size={32} color="#FFCA28" />
-          </BouncingIcon>
 
   
           <BouncingIcon name="PHP">
