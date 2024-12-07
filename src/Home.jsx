@@ -2,38 +2,9 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-scroll";
 import "animate.css";
-import { motion } from "framer-motion";
-
 
 import home from "./assets/home.jpg";
-
-
-const DownArrow = () => {
-  return (
-    <motion.button
-      initial={{ y: 0 }}
-      animate={{
-        y: [0, -10, 0], // Bounce effect
-      }}
-      transition={{
-        duration: 3, // Duration of one bounce cycle
-        repeat: Infinity, // Infinite loop
-        repeatType: "loop",
-      }}
-      style={{
-        fontSize: "2rem",
-        background: "var(--accent-color)",
-        border: "2px solid var(--onyx)",
-        color: "var(--onyx)",
-        cursor: "pointer",
-        borderRadius: "50%",
-        padding: '12px 24px'
-      }}
-    >
-      ↓
-    </motion.button>
-  );
-};
+import arrow from "./assets/chevron.png";
 
 
 const Container = styled.div`
@@ -42,19 +13,18 @@ const Container = styled.div`
   justify-content: center;
   height: 100vh;
 
-
   @media (max-width: 768px) {
     flex-direction: column;
   }
 `;
 
 const Wrapper = styled.div`
-box-sizing: border-box;
-text-align: center;
-overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
 
   @media (min-width: 768px) {
-    flex: 2; 
+    flex: 2;
   }
 `;
 
@@ -63,7 +33,6 @@ const Title = styled.h1`
   color: var(--anti-flash-white);
   margin-bottom: 10px;
   font-weight: 600;
-    
 
   @media only screen and (min-width: 769px) {
     font-size: 1.5rem;
@@ -79,7 +48,6 @@ const HomeSubtitle = styled.p`
   padding-bottom: 2rem;
   overflow: hidden;
 
-
   @media only screen and (max-width: 769px) {
     font-size: 1.2rem;
     padding: 0 1.8rem;
@@ -88,37 +56,26 @@ const HomeSubtitle = styled.p`
   }
 `;
 
-// const Button = styled.button`
-//   padding: 12px 24px;
-//   font-size: 16px;
-//   color: var(--onyx);
-//   font-weight: 600;
-//   background-color: var(--accent-color);
-//   border: 2px solid var(--accent-color);
-//   border-radius: 8px;
+const Button = styled.button`
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  animation: bounce 15s infinite;
 
-//   border-radius: 4px;
-//   cursor: pointer;
-//   text-decoration: none;
-//   // animation: bounce 3s infinite;
-// text-shadow: 0 0 10px rgba(0, 123, 255, 0.8)
+  img {
+  width: 50px;
+  height: auto;
+    transform: rotate(180deg);
+    max-width: 100%;
+    opacity: 0.8;
+  }
 
-//   @media only screen and (min-width: 320px) and (max-width: 498px) {
-//     /* Adjust input styles for the targeted screen sizes */
-//     padding: 8px;
-//     font-size: 12px;
-//   }
 
-//   @media only screen and (max-width: 768px) {
-//     padding: 0.6rem;
-//     font-weight: 400; /* normal */
-//   }
-
-//   &:hover {
-//     background-color: var(--accent-color);
-//     color: var(--onyx);
-//   }
-// `;
+  &:hover {
+    background-color: transparent;
+  }
+`;
 
 const boundIn = keyframes`
   0% {
@@ -135,7 +92,7 @@ const boundIn = keyframes`
       100% {
         transform: scale(1);
       }
-`
+`;
 
 const Span = styled.span`
   color: var(--accent-color);
@@ -143,7 +100,7 @@ const Span = styled.span`
   cursor: pointer;
 
   &:hover {
-  animation: ${boundIn} 1s ease-in;
+    animation: ${boundIn} 1s ease-in;
   }
 `;
 
@@ -174,7 +131,6 @@ const ImageCard = styled.div`
       width: 80%;
     }
   }
-
 
   @media (min-width: 2000px) {
     img {
@@ -213,15 +169,11 @@ const Home = () => {
             expertise.
           </HomeSubtitle>
 
-          {/* <Button className=""
-          // style={{ animationDuration: '15s'}}
-          >
-           
-          </Button> */}
-
-          <Link to="project" smooth={true} duration={300}>
-             <DownArrow />
+          <Button>
+            <Link to="project" smooth={true} duration={300}>
+              <img src={arrow} alt="arrow" />
             </Link>
+          </Button>
         </Wrapper>
       </Container>
     </>
