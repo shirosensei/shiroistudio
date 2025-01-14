@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import ImagePlaceholder from "./ImagePlaceholder";
 import placeholder from "../assets/placeholder.png";
-import hairHamonyImage from "../assets/hairhomny_1.webp";
-import quoteImage from "../assets/Animation.jpg";
+import hairHamonyImage from "../assets/hairhomny_2.webp";
+import quoteImage from "../assets/Animation.webp";
 import salesDashboardImage from "../assets/dashboard.webp";
 import currencyImage from "../assets/currency.webp";
 const LazyLoadedImage = React.lazy(() => import("./ImagePlaceholder"));
@@ -102,7 +102,13 @@ const StyledLink = styled(Link)`
     color: ${(props) =>
       props.$primary ? "var(--anti-flash-white)" : "var(--onyx)"};
   }
+
+    &:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 4px;
+  }
 `;
+
 
 const Project = () => {
   return (
