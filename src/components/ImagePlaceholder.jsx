@@ -12,10 +12,11 @@ const ImagePlaceholder = ({ src, alt, placeholderSrc, style }) => {
     onError={() => setImgSrc(placeholderSrc)} //? set placeholder if error
     style={{ 
       width: '100%', 
-      height: 'auto',
+      height: '100%',
       objectFit: 'cover', 
-      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.5)',
       borderRadius: '10px',
+
       ...style, 
     }}
 
