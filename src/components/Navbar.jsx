@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import { SiTwitter, SiGithub, SiLinkedin } from "react-icons/si";
+import { FiMail } from "react-icons/fi";
 
 const Header = styled.header`
   display: flex;
@@ -85,7 +87,7 @@ const NavigationMenu = styled.nav`
     list-style: none;
     margin: 0;
     padding: 0 ${({ theme }) => theme.spacing.medium};
-    height: 100%;
+    height: 80%;
   }
 
   .close-btn {
@@ -123,14 +125,25 @@ const NavigationMenu = styled.nav`
   }
 
   @media (min-width: 1920px) {
-    padding:  ${({ theme }) => theme.fontSizes.large};
-    font-size:  ${({ theme }) => theme.fontSizes.large};
+    padding: ${({ theme }) => theme.fontSizes.large};
+    font-size: ${({ theme }) => theme.fontSizes.large};
   }
 `;
 
 const MenuLink = styled.li`
   margin: ${({ theme }) => theme.spacing.small} 0;
-  color: ${({ theme }) => theme.colors.white};
+
+  .icons {
+    color: ${({ theme }) => theme.colors.accent};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.text};
+    }
+
+    @media screen (min-width: 800px) {
+      display: none;
+    }
+  }
 `;
 
 const NavigationLink = styled(Link)`
@@ -144,7 +157,37 @@ const NavigationLink = styled(Link)`
   }
 `;
 
+const BottomIcons = styled.div`
+  display: flex;
+  align-items: center;
+  padding: ${({ theme }) => theme.spacing.medium} 0;
+  justify-content: center;
+  flex-direction: column;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  left: 10px;
+  top: 45%;
 
+  small {
+    padding: 0 0 0 1rem;
+  }
+
+  a {
+  display: flex;
+    color: ${({ theme }) => theme.colors.text};
+        margin: ${({ theme }) => theme.spacing.small};
+        text-decoration: none;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.accent};
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -154,57 +197,101 @@ const Navbar = () => {
   };
 
   return (
+    <Header>
+      <BrandLogo>Tozo</BrandLogo>
 
-      <Header>
-        <BrandLogo>Tozo</BrandLogo>
+      <Hamburger isOpen={isOpen} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </Hamburger>
 
-        <Hamburger isOpen={isOpen} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </Hamburger>
+      {/* Todo Navigation Menu */}
+      <NavigationMenu isOpen={isOpen}>
+        <button className="close-btn" onClick={() => toggleMenu(false)}>
+          ✖
+        </button>
 
-        {/* Todo Navigation Menu */}
-        <NavigationMenu isOpen={isOpen}>
-          <button className="close-btn" onClick={() => toggleMenu(false)}>
-            ✖
-          </button>
+        <ul>
+          <MenuLink>
+            <NavigationLink
+              to="about"
+              smooth={true}
+              duration={300}
+              onClick={toggleMenu}
+            >
+              My Story
+            </NavigationLink>
+          </MenuLink>
 
-          <ul>
-            <MenuLink>
-              <NavigationLink
-                to="about"
-                smooth={true}
-                duration={300}
-                onClick={toggleMenu}
-              >
-                My Story
-              </NavigationLink>
-            </MenuLink>
+          <MenuLink>
+            <NavigationLink
+              to="project"
+              smooth={true}
+              duration={300}
+              onClick={toggleMenu}
+            >
+              My Creations
+            </NavigationLink>
+          </MenuLink>
+          {/* <MenuLink>
+            <NavigationLink
+              to="contact"
+              smooth={true}
+              duration={300}
+              onClick={toggleMenu}
+            >
+              Collaborate
+            </NavigationLink>
+          </MenuLink> */}
+        </ul>
+        <BottomIcons>
+          <a href="https://github.com/shirosensei">
+            <SiGithub
+              title="Star on Github"
+              aria-labelledby="Star on Github"
+              size={24}
+            />
+            <small>shirosensei</small>
+          </a>
+          <a
+            href="https://linkedin.com/in/codersensei"
+            aria-labelledby="Connect on LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiLinkedin
+              title="Connect on LinkedIn"
+              name="Connect on LinkedIn"
+              size={24}
+            />
+            <small>shirosensei</small>
+          </a>
+          <a
+            href="https://twitter.com/shiro_sensei"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiTwitter
+              title="Follow on Twitter"
+              aria-describedby="Follow on Twitter"
+              size={24}
+            />
+            <small>@shiro_sensei</small>
+          </a>
 
-            <MenuLink>
-              <NavigationLink
-                to="project"
-                smooth={true}
-                duration={300}
-                onClick={toggleMenu}
-              >
-                My Creations
-              </NavigationLink>
-            </MenuLink>
-            <MenuLink>
-              <NavigationLink
-                to="contact"
-                smooth={true}
-                duration={300}
-                onClick={toggleMenu}
-              >
-                Collaborate
-              </NavigationLink>
-            </MenuLink>
-          </ul>
-        </NavigationMenu>
-      </Header>
+          <a
+            href="mailto:codersensei@outlook.com"
+            title="Send an Email"
+            aria-labelledby="Send an Email"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FiMail size={24} /><small>codersensei@outlook.com</small>
+          </a>
+        </BottomIcons>
+      </NavigationMenu>
+    </Header>
   );
 };
 
