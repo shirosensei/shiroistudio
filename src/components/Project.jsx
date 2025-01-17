@@ -89,8 +89,8 @@ const ProjectLinks = styled.div`
 `;
 
 const linkStyles = (primary) => ({
-  color: primary ? "var(--gunmetal)" : "var(--accent-color)",
-  backgroundColor: primary ? "var(--accent-color)" : "var(--onyx)",
+  color: primary ? "var(--beige)" : "var(--secondary-color)",
+  backgroundColor: primary ? "var(--secondary-color)" : "var(--beige)",
 });
 
 //? Styled transient props anchor tag
@@ -98,17 +98,18 @@ const StyledLink = styled(Link)`
   ${({ $primary }) => linkStyles($primary)};
   border: 2px solid
     ${(props) =>
-      props.$primary ? "var(--accent-color)" : "var(--anti-flash-white)"};
+      props.$primary ? "var(--secondary-color)" : "var(--anti-flash-white)"};
   margin: ${(props) => props.theme.spacing.small};
   padding:  ${(props) => props.theme.spacing.small};
   font-size: ${(props) => props.theme.fontSizes.small};
   text-decoration: none;
+  border-radius: 0.35rem;
 
   &:hover {
     background-color: ${(props) =>
-      props.$primary ? "var(--gunmetal)" : "var(--accent-color)"};
+      props.$primary ? "var(--beige)" : "var(--secondary-color)"};
     color: ${(props) =>
-      props.$primary ? "var(--anti-flash-white)" : "var(--onyx)"};
+      props.$primary ? "var(--hover)" : "var(--beige)"};
   }
 
   &:focus {
