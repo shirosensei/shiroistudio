@@ -20,6 +20,7 @@ export const DarkBackground = createGlobalStyle`
 
   --black: #000000;
   --dark-gray: #333333;
+  --hover: #573232;
 }
 
 body {
