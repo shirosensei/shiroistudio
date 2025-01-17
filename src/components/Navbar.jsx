@@ -174,10 +174,10 @@ const BottomIcons = styled.div`
   }
 
   a {
-  display: flex;
+    display: flex;
     color: ${({ theme }) => theme.colors.text};
-        margin: ${({ theme }) => theme.spacing.small};
-        text-decoration: none;
+    margin: ${({ theme }) => theme.spacing.small};
+    text-decoration: none;
 
     &:hover {
       color: ${({ theme }) => theme.colors.accent};
@@ -252,7 +252,9 @@ const Navbar = () => {
               aria-labelledby="Star on Github"
               size={24}
             />
-            <small>shirosensei</small>
+            <small title="Star on Github" aria-labelledby="Star on Github">
+              shirosensei
+            </small>
           </a>
           <a
             href="https://linkedin.com/in/codersensei"
@@ -263,9 +265,12 @@ const Navbar = () => {
             <SiLinkedin
               title="Connect on LinkedIn"
               name="Connect on LinkedIn"
+              aria-labelledby="Connect on LinkedIn"
               size={24}
             />
-            <small>shirosensei</small>
+            <small title="Connect on LinkedIn" name="Connect on LinkedIn">
+              shirosensei
+            </small>
           </a>
           <a
             href="https://twitter.com/shiro_sensei"
@@ -277,7 +282,12 @@ const Navbar = () => {
               aria-describedby="Follow on Twitter"
               size={24}
             />
-            <small>@shiro_sensei</small>
+            <small
+              title="Follow on Twitter"
+              aria-describedby="Follow on Twitter"
+            >
+              @shiro_sensei
+            </small>
           </a>
 
           <a
@@ -287,7 +297,10 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FiMail size={24} /><small>codersensei@outlook.com</small>
+            <FiMail size={24} />
+            <small title="Send an Email" aria-labelledby="Send an Email">
+              codersensei@outlook.com
+            </small>
           </a>
         </BottomIcons>
       </NavigationMenu>

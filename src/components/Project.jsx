@@ -16,10 +16,8 @@ const Link = ({ className, text, ...props }) => (
 );
 
 const Title = styled.h2`
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: clamp(16px, 4vw, 32px);
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  margin-bottom: ${({ theme }) => theme.spacing.medium};
 `;
 
 const ProjectsContainer = styled.section`
@@ -28,30 +26,37 @@ const ProjectsContainer = styled.section`
     auto-fit,
     minmax(clamp(250px, 30%, 400px), 1fr)
   );
-  gap: clamp(16px, 2vw, 32px);
-  padding: clamp(16px, 4vw, 48px);
+  gap: ${({ theme }) => theme.spacing.medium};
+  padding: ${({ theme }) => theme.spacing.medium};
   margin: 0 auto;
 `;
 
 const ProjectCard = styled.div`
-  padding: clamp(16px, 1vw, 24px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: ${(props) => props.theme.spacing.large};
+  box-shadow: 0 4px 6px rgba(18, 37, 37, 0.1);
   border-radius: 8px;
   background: var(--black);
   height: auto;
+  transition: transform 0.3s ease-in-out;
 `;
 
 const ImageContainer = styled.div`
   width: 100%;
   height: auto;
   overflow: hidden;
+  display: block;
   border-radius: 8px;
-  margin-bottom: clamp(12px, 1.5vw, 24px);
+  margin-bottom: ${(props) => props.theme.spacing.large};
+  transition: transform 0.3s ease-in-out;
 
   img {
     width: 100%;
     height: auto;
     object-fit: cover;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
@@ -59,41 +64,44 @@ const ProjectInfo = styled.article`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
+  gap: ${(props) => props.theme.spacing.medium};
   position: relative;
 
-  h3 {
-    color: var(--white);
-    fontweight: "600";
-    width: 100%;
-    border-bottom: 2px solid var(--onyx);
-    padding: 0 0 clamp(12px, 1.5vw, 24px) 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.accent};
+  &:last-child {
+    border-bottom: none; /* Remove the line for the last card */
   }
+`;
 
-  p {
-    font-size: clamp(0.875rem, 1vw, 1rem);
-    // color: var(--onyx);
-  }
+const Heading = styled.h3`
+  color: ${(props) => props.theme.colors.text};
+  fontweight: "600";
+  width: 100%;
+  border-bottom: 2px solid var(--onyx);
+  padding: 0 0 ${(props) => props.theme.spacing.small} 0;
 `;
 
 const ProjectLinks = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(8px, 1vw, 16px);
+  gap: ${(props) => props.theme.spacing.small};
   margin-top: auto;
 `;
 
+const linkStyles = (primary) => ({
+  color: primary ? "var(--gunmetal)" : "var(--accent-color)",
+  backgroundColor: primary ? "var(--accent-color)" : "var(--onyx)",
+});
+
 //? Styled transient props anchor tag
 const StyledLink = styled(Link)`
-  color: ${(props) =>
-    props.$primary ? "var(--gunmetal)" : "var(--accent-color)"};
-  background-color: ${(props) =>
-    props.$primary ? "var(--accent-color)" : "var(--onyx)"};
+  ${({ $primary }) => linkStyles($primary)};
   border: 2px solid
     ${(props) =>
       props.$primary ? "var(--accent-color)" : "var(--anti-flash-white)"};
-  margin: 1em;
-  padding: 10px;
-  font-size: 1em;
+  margin: ${(props) => props.theme.spacing.small};
+  padding:  ${(props) => props.theme.spacing.small};
+  font-size: ${(props) => props.theme.fontSizes.small};
   text-decoration: none;
 
   &:hover {
@@ -103,7 +111,7 @@ const StyledLink = styled(Link)`
       props.$primary ? "var(--anti-flash-white)" : "var(--onyx)"};
   }
 
-    &:focus {
+  &:focus {
     outline: 2px solid var(--focus-color);
     outline-offset: 4px;
   }
@@ -125,8 +133,11 @@ const Project = () => {
               height="100"
             />
             <ProjectInfo>
-              <h3>Sales Dashboard</h3>
-              <p>Sales Dashboard built with React, TailwindCss, Node.js</p>
+              <Heading>Sales Overview Dashboard</Heading>
+              <p>
+                The Sales Dashboard is an intuitive web application designed to
+                help businesses monitor and optimize their sales performance.{" "}
+              </p>
               <ProjectLinks>
                 <StyledLink
                   href="https://github.com/shirosensei/SalesDashboard.git"
@@ -153,7 +164,7 @@ const Project = () => {
               height="400"
             />
             <ProjectInfo>
-              <h3>CurrencyXchange</h3>
+              <Heading>CurrencyXchange</Heading>
               <p>
                 CurrencyXchange is a web application that allows users to
                 compare real-time exchange rates, manage their currency
@@ -181,7 +192,7 @@ const Project = () => {
               height="400"
             />
             <ProjectInfo>
-              <h3>HairHarmony</h3>
+              <Heading>HairHarmony</Heading>
               <p>
                 This project is a comprehensive hair salon booking website where
                 customers can book sessions for various hair services.
@@ -212,7 +223,7 @@ const Project = () => {
               height="400"
             />
             <ProjectInfo>
-              <h3>Api Quote Generator</h3>
+              <Heading>Api Quote Generator</Heading>
               <p>
                 The Quote API Web App Generator is a powerful tool for
                 generating, storing, and managing quotes. It fetches a daily
@@ -242,7 +253,7 @@ const Project = () => {
               height="400"
             />
             <ProjectInfo>
-              <h3>Exercise Tracker Web App</h3>
+              <Heading>Exercise Tracker Web App</Heading>
               <p>
                 {" "}
                 Exercise Tracker application built with HTML, CSS, JavaScript,

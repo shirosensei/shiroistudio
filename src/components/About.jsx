@@ -3,9 +3,8 @@ import styled, { keyframes } from "styled-components";
 import {
   SiMysql,
   SiNginx,
-  // SiDocker,
+  SiDocker,
   SiTypescript,
-  // SiExpress,
   SiHtml5,
   SiCss3,
   SiJavascript,
@@ -19,88 +18,43 @@ import {
   SiNodedotjs,
 } from "react-icons/si";
 
-
-const AboutContainer = styled.div`
+const AboutContainer = styled.article`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  word-break: normal;
-  padding: 2rem;
-  margin: 1.5rem 0;
-  background-color: var(--gunmetal);
-
-  @media screen and (min-width: 768px) {
-    margin-top: 2rem;
-    padding-top: 2.5rem;
-    gap: 1rem;
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
-    /* Adjust input styles for the targeted screen sizes */
-    font-size: 14px;
-    line-height: 1.5rem;
-    margin: 3.5rem 0;
-  }
+  padding: ${({ theme }) => theme.spacing.larger} 0;
+  margin: ${({ theme }) => theme.spacing.large} 0;
+  padding-bottom: ${({ theme }) => theme.spacing.larger};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.gunmetal};
+  background-color: transparent;
 `;
 
 const AboutTitle = styled.h2`
-  font-size: 24px;
-  margin-bottom: 16px;
-  text-align: center;
-  color: var(--accent-color);
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  margin-bottom:  ${({ theme }) => theme.spacing.large};
+  color: ${({ theme }) => theme.colors.text};
 
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
-    /* Adjust input styles for the targeted screen sizes */
-    padding: 8px;
-    font-size: 18px;
-  }
+
 `;
 
 const AboutDescription = styled.p`
-  flex: 2;
-  font-size: 18px;
-  color: var(--white);
-  margin-bottom: 24px;
-  line-height: 2rem;
-  text-align: center;
-  width: fit-content(10em);
-  break-word: break-word;
-
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
-    /* Adjust input styles for the targeted screen sizes */
-    padding: 8px;
-    font-size: 14px;
-  }
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  margin-bottom: ${({ theme }) => theme.spacing.larger};
+  line-height: 1.6;
 `;
 
 const SkillsContainer = styled.div`
   display: flex;
-  flex: 1;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 5rem;
-  color: var(--anti-flash-white);
+  flex-shrink: 1;
+  padding-bottom: ${({ theme }) => theme.spacing.large};;
+  color: ${({ theme }) => theme.colors.text};
+`;
 
-  @media (min-width: 768px) {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
 
-// const ImageCard = styled.div`
-//   margin-top: 1.5rem;
-
-//   @media (min-width: 768px) {
-//     margin-top: 1.5rem;
-//     max-width: 80%;
-//     padding-top: 1.5rem;
-
-//     img {
-//       width: 80%;
-//     }
-//   }
-// `;
 
 // Define the bounce animation
 const bounceAnimation = keyframes`
@@ -109,10 +63,16 @@ const bounceAnimation = keyframes`
   100% { transform: translateY(0); }
 `;
 
+const rotateAnimation = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+
 const BouncingIcon = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: ${({ theme}) => theme.spacing.small};
   background-color: ${({ name }) => {
     switch (name) {
       case "MongoDB":
@@ -135,18 +95,18 @@ const BouncingIcon = styled.div`
         return "#777BB4";
       case "React":
         return "#61DAFB";
+        case "Docker":
+          return "#2496ED";
       default:
         return "#FFF";
     }
   }};
-  padding: 20px;
+  padding: ${({ theme }) => theme.spacing.small};
   border-radius: 50%;
   animation: ${bounceAnimation} 2s infinite;
 
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
-    /* Adjust input styles for the targeted screen sizes */
-    margin: 0.5rem 0.75rem;
-    padding: 10px;
+    &:hover {
+    animation: ${rotateAnimation} 1s linear infinite;
   }
 `;
 
@@ -154,18 +114,17 @@ const AboutMe = () => {
   return (
     <>
       <AboutContainer id="about">
- 
-
         <AboutTitle>Meet Tozo</AboutTitle>
         <AboutDescription>
-          As a full-stack software engineer, I'm fueled by my passion for
-          helping and contributing to the tech world and start-up businesses.
-          With a strong foundation in web development, I strive to create
-          innovative solutions and seamless user experiences. I love tackling
+          I am a full-stack software engineer, I'm fueled by my passion for
+          helping and contributing to the tech industry and start-up businesses.
+          <br /><br />
+          I have a strong foundation in web development, I strive to create
+          innovative solutions and seamless user experiences.<br /><br /> I love tackling
           complex challenges and delivering high-quality results, from building
-          scalable web applications to optimizing database performance. My goal
+          scalable web applications to optimizing database performance.<br /><br /> My goal
           is to shape the future of technology by turning innovative ideas into
-          scalable solutions that have a meaningful impact. Let's join forces
+          scalable solutions that have a meaningful impact. <br /><br />Let's join forces
           and build something amazing together!
         </AboutDescription>
         <AboutTitle>Tozo's Skills</AboutTitle>
@@ -222,16 +181,14 @@ const AboutMe = () => {
             <SiNginx size={32} color="#009639" />
           </BouncingIcon>
 
-          {/* <BouncingIcon name="docker">
+          <BouncingIcon name="docker">
             <SiDocker size={32} color="#2496ED" />
-          </BouncingIcon> */}
+          </BouncingIcon>
 
           <BouncingIcon name="Git">
             <SiGit size={32} name="git" />
           </BouncingIcon>
 
-
-  
           <BouncingIcon name="PHP">
             <SiPhp size={32} />
           </BouncingIcon>

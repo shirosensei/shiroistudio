@@ -1,5 +1,5 @@
 import React from 'react'
-import { DarkBackground } from './DarkBackground';
+import { DarkBackground } from '../styles/DarkBackground';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import styled from 'styled-components';
