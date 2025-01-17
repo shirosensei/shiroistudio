@@ -87,7 +87,7 @@ const NavigationMenu = styled.nav`
     list-style: none;
     margin: 0;
     padding: 0 ${({ theme }) => theme.spacing.medium};
-    height: 80%;
+    height: 14rem;
   }
 
   .close-btn {
@@ -117,6 +117,7 @@ const NavigationMenu = styled.nav`
       flex-direction: row;
       gap: ${({ theme }) => theme.spacing.large};
       padding: 0;
+      height: 100%;
     }
 
     .close-btn {
@@ -167,7 +168,7 @@ const BottomIcons = styled.div`
   position: absolute;
   right: 0;
   left: 10px;
-  top: 45%;
+  top: 10rem;
 
   small {
     padding: 0 0 0 1rem;
@@ -177,7 +178,7 @@ const BottomIcons = styled.div`
     display: flex;
     color: ${({ theme }) => theme.colors.text};
     margin: ${({ theme }) => theme.spacing.small};
-    text-decoration: none;
+    text-decoration: dashed underline;
 
     &:hover {
       color: ${({ theme }) => theme.colors.accent};
@@ -253,7 +254,7 @@ const Navbar = () => {
               size={24}
             />
             <small title="Star on Github" aria-labelledby="Star on Github">
-              shirosensei
+              github.com/shirosensei
             </small>
           </a>
           <a
@@ -269,7 +270,7 @@ const Navbar = () => {
               size={24}
             />
             <small title="Connect on LinkedIn" name="Connect on LinkedIn">
-              shirosensei
+              linkedin.com/shirosensei
             </small>
           </a>
           <a
@@ -286,7 +287,7 @@ const Navbar = () => {
               title="Follow on Twitter"
               aria-describedby="Follow on Twitter"
             >
-              @shiro_sensei
+              twitter.com/shiro_sensei
             </small>
           </a>
 
