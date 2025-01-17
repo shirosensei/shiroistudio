@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import { SiTwitter, SiGithub, SiLinkedin } from "react-icons/si";
+import { FiMail } from "react-icons/fi";
 
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9rem 2rem;
-  background-color: var(--onyx);
-  color: var(--anti-flash-white);
+  padding: ${({ theme }) => theme.spacing.small} 0;
+  background-color: inherit;
+  flex-direction: row-reverse;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.accent};
+  position: relative;
 
   @media (min-width: 1000px) {
-    padding: 0.5rem 2rem;
+    padding: 0;
   }
 `;
 
@@ -24,14 +28,25 @@ const Hamburger = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  // outline: 3px solid gray;
+  // flex-direction: column-reverse;
 
   span {
     width: 25px;
     height: 2px;
     background-color: var(--anti-flash-white);
-    margin: 4px 0;
+    margin: 0.25rem 0;
     transition: transform 0.3s ease;
+    z-index: 990;
+  }
+
+  span:nth-child(2) {
+    width: 15px;
+    // align-self: flex-end;
+  }
+
+  span:nth-child(3) {
+    width: 19px;
+    // align-self: flex-end;
   }
 
   @media (min-width: 768px) {
@@ -41,60 +56,93 @@ const Hamburger = styled.div`
   ${({ isOpen }) =>
     isOpen &&
     `
-    span:nth-child(1) {
-      transform: rotate(45deg) translate(11px, 20px);
-    }
-
-    span:nth-child(2) {
+    span {
       opacity: 0;
+      display: none;
     }
 
-    span:nth-child(3) {
-      transform: rotate(-45deg) translate(-5px, -5px);
-    }
   `}
 `;
 
 const NavigationMenu = styled.nav`
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  position: absolute;
-  top: 57px;
-  right: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
   left: 0;
-  background-color: var(--gunmetal);
-  padding-bottom: 1.2rem;
-  width: 100%;
-  text-align: center;
-  z-index: 9999999;
+  background-color: ${({ theme }) => theme.colors.spacecadet};
+  padding-bottom: ${({ theme }) => theme.spacing.medium};
+  width: 70%;
+  height: 100%;
+  z-index: 99;
+  overflow: auto;
+  transform: ${({ isOpen }) =>
+    isOpen ? "translateX(0)" : "translateX(-100%)"};
+  transition: transform 0.3s ease-in-out;
 
   ul {
-    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     list-style: none;
+    margin: 0;
+    padding: 0 ${({ theme }) => theme.spacing.medium};
+    height: 80%;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    color: ${({ theme }) => theme.colors.text};
+    font-size: ${({ theme }) => theme.fontSizes.large};
+    cursor: pointer;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.accent};
+    }
   }
 
   @media (min-width: 768px) {
-    position: static;
-    display: flex;
+    position: relative;
     align-items: center;
     width: auto;
     background-color: transparent;
     padding: 0;
-    text-align: right;
+    display: contents;
 
     ul {
-      display: inline-flex;
+      flex-direction: row;
+      gap: ${({ theme }) => theme.spacing.large};
+      padding: 0;
+    }
+
+    .close-btn {
+      display: none;
     }
   }
 
   @media (min-width: 1920px) {
-    padding: 2rem 2rem;
-    font-size: 2rem;
+    padding: ${({ theme }) => theme.fontSizes.large};
+    font-size: ${({ theme }) => theme.fontSizes.large};
   }
 `;
 
 const MenuLink = styled.li`
-  @media (min-width: 768px) {
-    margin: 0 1rem;
+  margin: ${({ theme }) => theme.spacing.small} 0;
+
+  .icons {
+    color: ${({ theme }) => theme.colors.accent};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.text};
+    }
+
+    @media screen (min-width: 800px) {
+      display: none;
+    }
   }
 `;
 
@@ -105,7 +153,39 @@ const NavigationLink = styled(Link)`
   padding: 7px 2px;
 
   &:hover {
-    color: var(--accent-color);
+    color: ${({ theme }) => theme.colors.accent};
+  }
+`;
+
+const BottomIcons = styled.div`
+  display: flex;
+  align-items: center;
+  padding: ${({ theme }) => theme.spacing.medium} 0;
+  justify-content: center;
+  flex-direction: column;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  left: 10px;
+  top: 45%;
+
+  small {
+    padding: 0 0 0 1rem;
+  }
+
+  a {
+    display: flex;
+    color: ${({ theme }) => theme.colors.text};
+    margin: ${({ theme }) => theme.spacing.small};
+    text-decoration: none;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.accent};
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
 
@@ -128,6 +208,10 @@ const Navbar = () => {
 
       {/* Todo Navigation Menu */}
       <NavigationMenu isOpen={isOpen}>
+        <button className="close-btn" onClick={() => toggleMenu(false)}>
+          ✖
+        </button>
+
         <ul>
           <MenuLink>
             <NavigationLink
@@ -150,7 +234,7 @@ const Navbar = () => {
               My Creations
             </NavigationLink>
           </MenuLink>
-          <MenuLink>
+          {/* <MenuLink>
             <NavigationLink
               to="contact"
               smooth={true}
@@ -159,8 +243,66 @@ const Navbar = () => {
             >
               Collaborate
             </NavigationLink>
-          </MenuLink>
+          </MenuLink> */}
         </ul>
+        <BottomIcons>
+          <a href="https://github.com/shirosensei">
+            <SiGithub
+              title="Star on Github"
+              aria-labelledby="Star on Github"
+              size={24}
+            />
+            <small title="Star on Github" aria-labelledby="Star on Github">
+              shirosensei
+            </small>
+          </a>
+          <a
+            href="https://linkedin.com/in/codersensei"
+            aria-labelledby="Connect on LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiLinkedin
+              title="Connect on LinkedIn"
+              name="Connect on LinkedIn"
+              aria-labelledby="Connect on LinkedIn"
+              size={24}
+            />
+            <small title="Connect on LinkedIn" name="Connect on LinkedIn">
+              shirosensei
+            </small>
+          </a>
+          <a
+            href="https://twitter.com/shiro_sensei"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiTwitter
+              title="Follow on Twitter"
+              aria-describedby="Follow on Twitter"
+              size={24}
+            />
+            <small
+              title="Follow on Twitter"
+              aria-describedby="Follow on Twitter"
+            >
+              @shiro_sensei
+            </small>
+          </a>
+
+          <a
+            href="mailto:codersensei@outlook.com"
+            title="Send an Email"
+            aria-labelledby="Send an Email"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FiMail size={24} />
+            <small title="Send an Email" aria-labelledby="Send an Email">
+              codersensei@outlook.com
+            </small>
+          </a>
+        </BottomIcons>
       </NavigationMenu>
     </Header>
   );

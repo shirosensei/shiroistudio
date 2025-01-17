@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { DarkBackground } from "./DarkBackground";
+import { DarkBackground } from "../styles/DarkBackground";
 
 
 
@@ -128,7 +128,6 @@ const ContactMe = () => {
   return (
     <>
 
-      <DarkBackground />
 
       <Container id="contact">
         <Wrapper>

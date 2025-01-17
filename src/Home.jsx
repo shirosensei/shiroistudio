@@ -1,17 +1,17 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-scroll";
 import "animate.css";
 
 import home from "./assets/home.jpg";
-import arrow from "./assets/chevron.png";
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-
+  flex-direction: row-reverse;
+  padding-bottom:  ${({ theme }) => theme.spacing.larger};
+  border-bottom: 2px solid  ${({ theme }) => theme.colors.gunmetal};
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -19,91 +19,47 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  text-align: center;
-  overflow: hidden;
-
-  @media (min-width: 768px) {
-    flex: 2;
-  }
+  width: 100%;
 `;
 
-const Title = styled.h1`
-  font-size: 1.8rem;
-  color: var(--anti-flash-white);
-  margin-bottom: 10px;
-  font-weight: 600;
-
-  @media only screen and (min-width: 769px) {
-    font-size: 1.5rem;
-  }
+const Heading = styled.h1`
+  font-size: ${({ theme }) => theme.fontSizes.large};
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: ${({ theme }) => theme.spacing.small};
+  font-weight: 700;
 `;
 
-const HomeSubtitle = styled.p`
-  font-size: 18px;
-
-  color: var(--anti-flash-white);
-  margin-bottom: 24px;
-  max-width: 100%;
-  padding-bottom: 2rem;
-  overflow: hidden;
-
-  @media only screen and (max-width: 769px) {
-    font-size: 1.2rem;
-    padding: 0 1.8rem;
-    font-weight: 400; /* normal */
-    line-height: 1.5;
-  }
+const Paragraph = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.small};
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.onyx};
+  line-height: 1.6;
 `;
 
 const Button = styled.button`
-  padding: 0;
+  text-align: center;
+  padding: 0 ${({ theme }) => theme.spacing.large};
   background-color: transparent;
-  border: none;
+  border: 1px solid ${({ theme }) => theme.colors.accent};
+  border-radius: 0.375rem;
+  line-height: ${({ theme }) => theme.spacing.small};
   cursor: pointer;
-  animation: bounce 15s infinite;
-
-  img {
-    width: 50px;
-    height: auto;
-    transform: rotate(180deg);
-    max-width: 100%;
-    opacity: 0.8;
-  }
+  color: ${({ theme }) => theme.colors.text};
+  box-shadow: inset 0px 0px 2px ${({ theme }) => theme.colors.accent};
+  letter-spacing: 0.075rem;
+  height: 3.5rem;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
 
   &:hover {
-    background-color: transparent;
-  }
-`;
-
-const boundIn = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-    70%{
-      transform: scale(0.9);
-    }
-      100% {
-        transform: scale(1);
-      }
-`;
-
-const Span = styled.span`
-  color: var(--accent-color);
-  display: inline-block;
-  cursor: pointer;
-
-  &:hover {
-    animation: ${boundIn} 5s ease-in;
+    transform: scale(0.98);
+    background-color: ${({ theme }) => theme.colors.accentHover};
+    border: 2px solid ${({ theme }) => theme.colors.accentHover};
   }
 `;
 
 const ImageCard = styled.div`
-  margin-top: 2.5rem;
+  margin-top: ${({ theme }) => theme.spacing.medium};
   width: 100%;
   display: flex;
   justify-content: center;
@@ -119,9 +75,6 @@ const ImageCard = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    flex: 3;
-    margin-top: 2.5rem;
-    margin-left: 5rem;
     max-width: 600px;
     justify-content: flex-end;
 
@@ -159,17 +112,12 @@ const Home = () => {
         </ImageCard>
 
         <Wrapper>
-          <Title className="animate__animated animate__backInUp 1s ease-in-out">
-            Hi, I'm Tozo! <Span>A Software Engineer</Span>
-          </Title>
-          <HomeSubtitle className="animate__animated animate__backInRight 2s animate__slow">
-            Discover my impressive portfolio of projects that exhibit my
-            expertise.
-          </HomeSubtitle>
+          <Heading>Hi, I'm Tozo! A Software Engineer</Heading>
+          <Paragraph>Check out my portfolio of projects.</Paragraph>
 
           <Button>
             <Link to="project" smooth={true} duration={300}>
-              <img src={arrow} alt="arrow" width="100%" height="100%" />
+              Let's Go
             </Link>
           </Button>
         </Wrapper>

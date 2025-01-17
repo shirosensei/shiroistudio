@@ -1,82 +1,92 @@
-import React from 'react';
-import styled from 'styled-components';
-import { SiTwitter, SiGithub, SiLinkedin  } from 'react-icons/si';
+import React from "react";
+import styled from "styled-components";
+import { SiTwitter, SiGithub, SiLinkedin } from "react-icons/si";
+import { FiMail } from "react-icons/fi";
 
 const Container = styled.footer`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 1.5rem;
-  background-color: #333;
-  color: #fff;
+
+  padding: ${({ theme }) => theme.spacing.small} 0;
+  background-color: transparent;
+  color: ${({ theme }) => theme.colors.text};
   position: relative;
+  border-top: 2px solid ${({ theme }) => theme.colors.accent};
 
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
-    align-items: center;
-    justify-content: flex-end;    
-  }
+   }
 
-  
-@media only screen and (min-width: 320px) and (max-width: 498px) {
-  /* Styles for screens between 320px and 498px */
-  padding: .75rem 0;
-}
+ 
 `;
 
 const FooterText = styled.p`
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSizes.medium};
   margin: 0;
-
-  @media only screen and (min-width: 320px) and (max-width: 498px) {
-    /* Styles for screens between 320px and 498px */
-    font-size: 0.7rem;
-  }
-  
 `;
 
 const Anchor = styled.a`
-text-decoration: none;
-color: #fff;
-font-size: 1.5rem;
-padding: .5rem;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.text};
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  padding: ${({ theme }) => theme.fontSizes.small};
 
-
-@media only screen and (min-width: 320px) and (max-width: 498px) {
-  /* Styles for screens between 320px and 498px */
-  font-size: .75rem;
-}
-`
+  &:hover {
+    color: ${({ theme }) => theme.colors.accent};
+  }
+`;
 
 const FooterIcon = styled.div`
-background-color: inherit;
-margin: 0;
-
-@media (width <= 768px) {
-  margin-bottom: 1.2rem;
-}
+  background-color: inherit;
+  margin: 0;
 
 
-`
-
-
-
+`;
 
 const Footer = () => {
   return (
     <Container>
-      <FooterText>© 2024 Tozo Sensei. All rights reserved.</FooterText>
+      <FooterText>© 2025 Tozo Sensei. All rights reserved.</FooterText>
       <FooterIcon>
-      <Anchor href="https://twitter.com/shiroi_sensei" aria-label="Twitter" title='Twitter'>
-        <SiTwitter />
-      </Anchor>
-      <Anchor href="https://github.com/shirosensei"  aria-label="GitHub" title='GitHub'>
-        <SiGithub />
-      </Anchor>
-      <Anchor href="https://linkedin.com/in/codersensei"  aria-label="LinkedIn" title='LinkedIn'>
-        <SiLinkedin />
-      </Anchor>
+        <Anchor href="https://twitter.com/shiroi_sensei">
+          <SiTwitter
+            name="Follow on Twitter"
+            aria-labelledby="Follow on Twitter"
+            title="Follow on Twitter"
+          />
+        </Anchor>
+        <Anchor
+          href="https://github.com/shirosensei"
+          aria-label="Star on GitHub"
+        >
+          <SiGithub
+            title="Star on GitHub"
+            name="Star on Github"
+            aria-labelledby="Star on Github"
+          />
+        </Anchor>
+        <Anchor
+          href="https://linkedin.com/in/codersensei"
+          aria-labelledby="Connect on LinkedIn"
+        >
+          <SiLinkedin
+            name="Connect on LinkedIn"
+            title="Connect on LinkedIn"
+            aria-labelledby="Connect on LinkedIn"
+          />
+        </Anchor>
+        <Anchor
+          href={`mailto:codersensei@outlook.com`}
+          aria-label="Send an Email"
+          aria-labelledby="Send an Email"
+        >
+          <FiMail
+            name="Send an Email"
+            title="Send an Email"
+            style={{ color: `${({ theme }) => theme.colors.accent}` }}
+          />
+        </Anchor>
       </FooterIcon>
     </Container>
   );

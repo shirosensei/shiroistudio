@@ -6,20 +6,25 @@ import ScrollToTop from './components/ScrollToTop';
 import AboutMe from './components/About';
 import ContactMe from './components/ContactMe';
 import Project from './components/Project';
+import SectionWapper from "./components/SectionWapper";
+import { DarkBackground } from "./styles/DarkBackground";
 
 
 
 function App() {
   return (
+    
     <>
-    <Navbar />
-    <Home />
-    <AboutMe />
-    <Project />
-    <ContactMe />
-    <ScrollToTop />
-    <Footer />
-    </>
+    <DarkBackground />
+    <SectionWapper>
+      <Navbar />
+      <Home />
+      <AboutMe />
+      <Project />
+      {/* <ContactMe /> */}
+      <ScrollToTop />
+      <Footer />
+    </SectionWapper></>
 
   );
 }
